@@ -1,4 +1,5 @@
-// import { CiCalendar } from "react-icons/ci";
+import { FaCalendar, FaTrophy } from "react-icons/fa";
+import { FaCode   } from "react-icons/fa6";
 
 const Hero = () => {
   return (
@@ -25,8 +26,25 @@ const Hero = () => {
         </div>
 
         {/* Details about Code Crunch */}
-        <div className="">
-
+        <div className="mt-12 px-2 grid md:grid-cols-3 gap-8 text-white/90">
+          {/* First detail */}
+            <div className="col-span-1 flex flex-col font-mono justify-between items-center">
+              <FaCalendar className="h-16 w-auto mb-4" />
+              <h3 className="mb-2 text-xl text-white font-semibold">45 Days</h3>
+              <p className="text-center text-[#B3B3B3]">Complete and compete with you batchmates for the top position.</p>
+            </div>
+          {/* Second detail */}
+          <div className="col-span-1 flex flex-col font-mono items-center text-center">
+              <FaTrophy className="h-18 w-auto mb-4"/>
+              <h3 className="mb-2 text-xl text-white  font-semibold">Win Big</h3>
+              <p className="text-center text-[#B3B3B3]">Exciting prizes for finishers and top performers.</p>
+          </div>
+          {/* Third detail */}
+          <div className="col-span-1 flex flex-col font-mono items-center text-center">
+              <FaCode className="h-18 w-auto mb-4 font-semibold"/>
+              <h3 className="mb-2 text-xl text-white ">Code Daily</h3>
+              <p className="text-center text-[#B3B3B3]">Code every day. Challenge yourself. Your consistency is your superpower</p>
+          </div>
         </div>
       </div>
     </section>
