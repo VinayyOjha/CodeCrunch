@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <section className=" py-6 px-4 flex justify-center">
       <div className="container max-w-7xl ">
-        <div className="p-2 px-4 grid grid-cols-2 items-center rounded border border-white/25">
+        <div className="p-2 sm:px-4 grid grid-cols-2 items-center rounded border border-white/25">
           {/* Logo & NameTag */}
           <div className="col-span-1 gap-0.5 flex items-center ">
             <img src={NavbarImage} alt="" className=" h-8 md:h-10 w-auto"/>
