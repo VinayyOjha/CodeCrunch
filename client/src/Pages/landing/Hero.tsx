@@ -1,4 +1,4 @@
-import { CiCalendar } from "react-icons/ci";
+// import { CiCalendar } from "react-icons/ci";
 
 const Hero = () => {
   return (
