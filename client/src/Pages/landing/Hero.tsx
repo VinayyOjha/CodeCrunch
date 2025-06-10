@@ -2,13 +2,15 @@ import { FaCalendar, FaTrophy } from "react-icons/fa";
 import { FaCode } from "react-icons/fa6";
 import { motion } from "motion/react";
 import AnimatedSection from "../../components/animations/ComponentAnimation";
+import { FaUserGroup } from "react-icons/fa6";
+import { IoCheckmarkDoneOutline } from "react-icons/io5";
 
 const Hero = () => {
   return (
     <section className="p-3 sm:p-2 mt-6">
       <div className="container max-w-6xl mx-auto">
         {/* Headings and catchy title */}
-        <div className="p-2 flex flex-col justify-center items-center ">
+        <div className="p-2 flex flex-col justify-center items-center  ">
           <motion.p
             className="p-2 hidden md:block font-mono text-md text-center text-white/60"
             initial={{ opacity: 0, x: 20 }}
@@ -67,12 +69,12 @@ const Hero = () => {
 
         {/* Details about Code Crunch */}
         <AnimatedSection>
-          <div className="mt-14 px-2 grid md:grid-cols-3 gap-12 sm:gap-8 text-white/90">
+          <div className="py-6 mt-14 px-2 grid md:grid-cols-3 gap-12 sm:gap-8 text-white/90 ">
             {/* First detail */}
 
             <motion.div
               className="p-2 py-6 col-span-1 flex flex-col items-center font-mono 
-            hover:border border-white/15 bg-[#333333]/40 rounded-xl"
+            hover:border border-white/15 bg-white/5 rounded-xl"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.97 }}
               whileInView={{}}
@@ -88,7 +90,7 @@ const Hero = () => {
 
             <motion.div
               className="px-2 py-6 col-span-1 flex flex-col font-mono items-center 
-            hover:border border-white/15 bg-[#333333]/40 rounded-xl"
+            hover:border border-white/15 bg-white/5 rounded-xl"
               whileHover={{ scale: 1.01 }}
               whileTap={{ scale: 0.97 }}
             >
@@ -103,7 +105,7 @@ const Hero = () => {
 
             <motion.div
               className="p-2 py-6 col-span-1 flex flex-col font-mono items-center 
-            hover:border border-white/15 text-center bg-[#333333]/40 rounded-xl"
+            hover:border border-white/15 text-center bg-white/5 rounded-xl"
               whileHover={{ scale: 1.01 }}
               whileTap={{ scale: 0.97 }}
             >
@@ -120,26 +122,79 @@ const Hero = () => {
         </AnimatedSection>
 
         {/* Finalists and Top Finsihers */}
-        <div className=" border-0 ">
-            <div className="max-w-5xl flex justify-center border border-amber-100 text-white">
-                <div className="flex flex-col">
-                  
-                </div>
+        <AnimatedSection>
+          <div className="mt-12 mb-20 w-full flex flex-col justify-center items-center text-white">
+            <span className="mt-16 mb-12 font-mono font-bold text-center text-4xl ld:text-5xl">
+              Prizes & Rewards
+            </span>
+            <div className="w-full max-w-4xl rounded-lg bg-white/5 border-white/10">
+              <div className="p-6 flex flex-col justify-center text-center">
+                <FaUserGroup className="mb-5 h-12 w-auto text-purple-400 " />
+                <p className="font-mono font-bold text-2xl text-white mb-2">
+                  Top coders rise
+                </p>
+                <p className="mb-2 font-mono  text-2xl text-purple-400 ">
+                  1-on-1 Mock Interviews.
+                </p>
+                <p className="font-mono font-semibold text-md text-white/40">
+                  Stand out as a top coder and unlock exclusive mock interviews
+                  with industry experts.
+                </p>
+              </div>
             </div>
-        </div>
+          </div>
+        </AnimatedSection>
+
+        <AnimatedSection>
+          <div className="mb-20 mt-20">
+            <p className="mb-10 text-center text-4xl ld:text-5xl text-white font-bold font-mono">
+              Competition Rules
+            </p>
+
+            <div className="p-6 max-w-4xl mx-auto rounded-lg bg-white/5">
+              <div className="space-y-6 font-mono">
+                <div className="flex gap-3 items-start ">
+                  <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-purple-400" />
+                  <p className="text-white/60">
+                    Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                    consectetur adipisicing elit. Facilis, reprehenderit!
+                  </p>
+                </div>
+
+                <div className="flex gap-3 items-start ">
+                  <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-green-400" />
+                  <p className="text-white/60">
+                    Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                    consectetur adipisicing
+                  </p>
+                </div>
+
+                <div className="flex gap-3 items-start ">
+                  <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-red-400" />
+                  <p className="text-white/60">Lorem ipsum dolor sit amet.</p>
+                </div>
+
+                <div className="flex gap-3 items-start ">
+                  <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-blue-400" />
+                  <p className="text-white/60">
+                    Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                    consectetur adipisicing elit.
+                  </p>
+                </div>
+
+                <div className="flex gap-3 items-start ">
+                  <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-yellow-400" />
+                  <p className="text-white/60">
+                    Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </AnimatedSection>
       </div>
     </section>
   );
 };
 
 export default Hero;
-// Best one so far..
-// initial={{opacity:0, y:20}}
-// animate={{opacity:1, y:0}}
-// transition={{ ease: "easeInOut", delay: 0.6, duration: 2 }}
-
-// Second One
-// initial={{ opacity: 0, skewY: 7 }}
-// animate={{ opacity: 1, skewY: 0 }}
-
-// Third One

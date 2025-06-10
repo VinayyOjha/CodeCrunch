@@ -7,10 +7,11 @@ const Navbar = () => {
     <section className="sticky top-0 z-50 py-3 px-4 flex justify-center ">
       <div className=" container max-w-7xl backdrop-blur-xl">
         <motion.div
-          className="p-2 sm:px-4 grid grid-cols-2 items-center rounded border border-white/25"
+          className="p-2 sm:px-4 grid grid-cols-2 items-center rounded-full border border-white/25"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ ease: "easeInOut", duration: 1, delay: 0.2 }}
+          // whileHover={{glare}}
         >
           {/* Logo & NameTag */}
           <motion.div className="col-span-1 gap-0.5 flex items-center ">
