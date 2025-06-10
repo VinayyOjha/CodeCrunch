@@ -4,11 +4,12 @@ import { motion } from "motion/react";
 import AnimatedSection from "../../components/animations/ComponentAnimation";
 import { FaUserGroup } from "react-icons/fa6";
 import { IoCheckmarkDoneOutline } from "react-icons/io5";
+import BlurText from "../../blocks/TextAnimations/BlurText/BlurText";
 
 const Hero = () => {
   return (
-    <section className="p-3 sm:p-2 mt-6">
-      <div className="container max-w-6xl mx-auto">
+    <section className="p-3 mt-6">
+      <div className="mb-10 container max-w-6xl mx-auto">
         {/* Headings and catchy title */}
         <div className="p-2 flex flex-col justify-center items-center  ">
           <motion.p
@@ -48,7 +49,7 @@ const Hero = () => {
             </motion.span>
           </motion.span>
 
-          <div className="pt-4 sm:pt-6 mb-8">
+          <div className="pt-4 sm:pt-6 mb-6">
             <div className="p-2 rounded-sm sm:bg-[#171717] font-mono text-md sm:text-xl text-center text-[#B3B3B3] ">
               <span className="text-neutral-300/60">"CodeCrunch</span> feels
               like a competition which lasts 45 days."
@@ -82,7 +83,7 @@ const Hero = () => {
               <FaCalendar className="h-16 w-auto mb-4" />
               <h3 className="mb-2 text-xl text-white font-semibold">45 Days</h3>
               <p className="text-center text-[#B3B3B3]">
-                Complete and compete with you batchmates for the top position.
+                Compete with your batchmates for the top position.
               </p>
             </motion.div>
 
@@ -124,7 +125,7 @@ const Hero = () => {
         {/* Finalists and Top Finsihers */}
         <AnimatedSection>
           <div className="mt-12 mb-20 w-full flex flex-col justify-center items-center text-white">
-            <span className="mt-16 mb-12 font-mono font-bold text-center text-4xl ld:text-5xl">
+            <span className="mt-16 mb-12 font-mono font-bold text-center text-4xl lg:text-5xl">
               Prizes & Rewards
             </span>
             <div className="w-full max-w-4xl rounded-lg bg-white/5 border-white/10">
@@ -145,9 +146,10 @@ const Hero = () => {
           </div>
         </AnimatedSection>
 
+        {/* Competition rules */}
         <AnimatedSection>
-          <div className="mb-20 mt-20">
-            <p className="mb-10 text-center text-4xl ld:text-5xl text-white font-bold font-mono">
+          <div className="mb-20 mt-10">
+            <p className="mb-10 text-center text-4xl lg:text-5xl text-white font-bold font-mono">
               Competition Rules
             </p>
 
@@ -192,6 +194,35 @@ const Hero = () => {
             </div>
           </div>
         </AnimatedSection>
+
+        {/* Ready to compete */}
+        <div className="mt-10 max-w-3xl mx-auto">
+          {/* <BlurText /> */}
+          <div className="flex justify-center">
+            <BlurText
+              text="Ready to compete?"
+              delay={150}
+              animateBy="words"
+              direction="top"
+              // onAnimationComplete={handleAnimationComplete}
+              className="mt-10 mb-5 justify-center text-center text-3xl sm:text-4xl lg:text-5xl text-white font-bold font-mono"
+            />
+          </div>
+
+          {/* <p className="mb-5 text-center text-4xl lg:text-5xl text-white font-bold font-mono">
+            Ready to compete?
+          </p> */}
+
+          <p className="mb-4 text-center text-xl sm:text-2xl text-white/50 font-mono">
+            Join the 45 days CodeCrunch competition and elevate your coding
+            problem solving apprpach.
+          </p>
+          <div className="flex justify-center">
+            <button className="p-2 rounded-md items-center font-mono text-xl text-white bg-violet-700">
+              Register Now!
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   );

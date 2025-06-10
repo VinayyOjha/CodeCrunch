@@ -3,7 +3,7 @@ import Navbar from "./Pages/landing/Navbar";
 
 const App = () => {
   return (
-    <div className="flex flex-col bg-black pb-[2000px]">
+    <div className="flex flex-col bg-black">
       <Navbar />
       <Hero />
     </div>

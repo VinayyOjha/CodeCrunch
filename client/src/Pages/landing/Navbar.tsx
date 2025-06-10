@@ -4,8 +4,8 @@ import { motion } from "motion/react";
 
 const Navbar = () => {
   return (
-    <section className="sticky top-0 z-50 py-3 px-4 flex justify-center ">
-      <div className=" container max-w-7xl backdrop-blur-xl">
+    <section className="sticky top-0 z-50 px-4 flex justify-center ">
+      <div className="mt-5 container max-w-7xl backdrop-blur-xl">
         <motion.div
           className="p-2 sm:px-4 grid grid-cols-2 items-center rounded-full border border-white/25"
           initial={{ opacity: 0, y: -20 }}
