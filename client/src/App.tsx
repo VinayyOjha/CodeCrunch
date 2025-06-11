@@ -1,13 +1,12 @@
-import Hero from "./Pages/landing/Hero";
-import Navbar from "./Pages/landing/Navbar";
+import {BrowserRouter} from "react-router-dom";
+import AppRoutes from "./routes/AppRoutes";
 
 const App = () => {
   return (
-    <div className="flex flex-col bg-black">
-      <Navbar />
-      <Hero />
-    </div>
-  );
-};
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
+  )
+}
 
-export default App;
+export default App

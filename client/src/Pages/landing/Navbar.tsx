@@ -1,8 +1,11 @@
 import NavbarImage from "../../assets/logoLight.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { motion } from "motion/react";
+import { useNavigate } from "react-router-dom";
+
 
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <section className="sticky top-0 z-50 px-4 flex justify-center ">
       <div className="mt-5 container max-w-7xl backdrop-blur-xl">
@@ -32,7 +35,7 @@ const Navbar = () => {
             {/* Hamburger Icon */}
             <GiHamburgerMenu className="text-white md:hidden" />
             {/* Buttons */}
-            <button className="py-2 px-3 hidden md:block font-mono cursor-pointer hover:bg-[#333333]/80 text-white  bg-[#333333] rounded-lg ">
+            <button className="py-2 px-3 hidden md:block font-mono cursor-pointer hover:bg-[#333333]/80 text-white  bg-[#333333] rounded-lg " onClick={() => navigate("/login")}>
               Login
             </button>
             <button className="py-2 px-3 hidden md:block  font-mono cursor-pointer hover:bg-[#333333]/80 text-white  bg-[#333333] rounded-lg">

@@ -1,12 +1,15 @@
 import { FaCalendar, FaTrophy } from "react-icons/fa";
 import { FaCode } from "react-icons/fa6";
 import { motion } from "motion/react";
-import AnimatedSection from "../../components/animations/ComponentAnimation";
 import { FaUserGroup } from "react-icons/fa6";
 import { IoCheckmarkDoneOutline } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
+
+import AnimatedSection from "../../components/animations/ComponentAnimation";
 import BlurText from "../../blocks/TextAnimations/BlurText/BlurText";
 
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <section className="p-3 mt-6">
       <div className="mb-10 container max-w-6xl mx-auto">
@@ -58,7 +61,7 @@ const Hero = () => {
         </div>
 
         {/* Explore Now Button */}
-        <div className="flex justify-center">
+        <div onClick={() => navigate("/login")} className="flex justify-center">
           <motion.button
             className="p-2 px-4 text-center rounded-lg cursor-pointer font-mono border border-white/25 hover:bg-[#333333]/70 hover:text-white/80  text-white"
             whileHover={{ scale: 1.04 }}
@@ -217,7 +220,7 @@ const Hero = () => {
             Join the 45 days CodeCrunch competition and elevate your coding
             problem solving apprpach.
           </p>
-          <div className="flex justify-center">
+          <div onClick={() => navigate("/login")} className="flex justify-center">
             <button className="p-2 rounded-md items-center font-mono text-xl text-white bg-violet-700">
               Register Now!
             </button>
