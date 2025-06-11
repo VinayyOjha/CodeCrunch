@@ -4,7 +4,7 @@ import { RiLockPasswordLine } from "react-icons/ri";
 const Login = () => {
   return (
     <div className="min-h-screen bg-black">
-      <div className="p-4 sm:p-2 container max-w-lg mx-auto ">
+      <div className="p-4 sm:p-2 container max-w-md mx-auto flex flex-col">
         <div className="flex flex-col items-center justify-center">
           <span className="mt-12 font-mono font-bold text-3xl bg-gradient-to-r from-purple-500 via-orange-500 to-pink-500 bg-clip-text text-transparent inline-block">
             CodeCrunch.
@@ -16,7 +16,7 @@ const Login = () => {
 
         {/* Email & Password */}
         <div className="mt-8 px-4 py-4 sm:py-6 flex flex-col gap-6 rounded-md border border-white/25">
-        
+
           {/* Email */}
           <div>
             <div className="flex gap-2 items-center">
