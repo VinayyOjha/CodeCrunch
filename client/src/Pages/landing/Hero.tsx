@@ -220,7 +220,7 @@ const Hero = () => {
             Join the 45 days CodeCrunch competition and elevate your coding
             problem solving apprpach.
           </p>
-          <div onClick={() => navigate("/login")} className="flex justify-center">
+          <div onClick={() => navigate("/register")} className="flex justify-center">
             <button className="p-2 rounded-md items-center font-mono text-xl text-white bg-violet-700">
               Register Now!
             </button>

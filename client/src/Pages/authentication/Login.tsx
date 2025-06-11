@@ -1,3 +1,4 @@
+import { Input } from "@/components/ui/input";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
 
@@ -25,11 +26,16 @@ const Login = () => {
                 Email
               </span>
             </div>
-            
-            <input
+
+            {/* <input
               type="email"
               placeholder="Enter Email"
               className="mt-4 w-full rounded-md font-mono bg-black border border-white/15 px-4 py-2 text-white focus:outline-none"
+            /> */}
+            <Input
+              type="email"
+              placeholder="Enter Email"
+              className=" mt-2 font-mono text-lg"
             />
           </div>
 
@@ -41,28 +47,37 @@ const Login = () => {
                 Password
               </span>
             </div>
-            
-            <input
+
+            {/* <input
               type="email"
               placeholder="Enter Password"
               className="mt-4 w-full rounded-md font-mono bg-black border border-white/15 px-4 py-2 text-white focus:outline-none"
+            /> */}
+            <Input
+              type="password"
+              placeholder="Enter Password"
+              className=" mt-2 font-mono text-lg"
             />
           </div>
-
-
         </div>
 
         {/* Component 3: Forgot Password Section */}
         <div className="pl-1 flex font-mono text-sm text-white/55 text-start w-full mb-4">
           <p>Forgot Password?</p>
-          <span className="ml-1 underline underline-offset-auto">Reset here</span>
+          <span className="ml-1 underline underline-offset-auto">
+            Reset here
+          </span>
           <span>.</span>
         </div>
 
         {/* Component 4: Sign In button */}
-        <div className="border border-red-800 min-w-xs">
-          <button className="py-2 font-mono font-bold text-lg w-full rounded-md
-           text-white bg-purple-500">Sign In</button>
+        <div className="min-w-xs">
+          <button
+            className="py-2 font-mono font-bold text-lg w-full rounded-md
+           text-white bg-purple-500"
+          >
+            Sign In
+          </button>
         </div>
       </div>
     </section>

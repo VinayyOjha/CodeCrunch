@@ -38,7 +38,7 @@ const Navbar = () => {
             <button className="py-2 px-3 hidden md:block font-mono cursor-pointer hover:bg-[#333333]/80 text-white  bg-[#333333] rounded-lg " onClick={() => navigate("/login")}>
               Login
             </button>
-            <button className="py-2 px-3 hidden md:block  font-mono cursor-pointer hover:bg-[#333333]/80 text-white  bg-[#333333] rounded-lg">
+            <button className="py-2 px-3 hidden md:block  font-mono cursor-pointer hover:bg-[#333333]/80 text-white  bg-[#333333] rounded-lg" onClick={() => navigate("/register")}>
               Register
             </button>
           </div>
