@@ -52,7 +52,7 @@ const Hero = () => {
             </motion.span>
           </motion.span>
 
-          <div className="pt-4 sm:pt-6 mb-6">
+          <div className="pt-4 mb-6">
             <div className="p-2 rounded-sm sm:bg-[#171717] font-mono text-md sm:text-xl text-center text-[#B3B3B3] ">
               <span className="text-neutral-300/60">"CodeCrunch</span> feels
               like a competition which lasts 45 days."
