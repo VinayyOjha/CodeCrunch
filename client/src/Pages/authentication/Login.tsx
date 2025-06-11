@@ -3,74 +3,69 @@ import { RiLockPasswordLine } from "react-icons/ri";
 
 const Login = () => {
   return (
-    <div className="min-h-screen bg-black">
-      <div className="p-4 sm:p-2 container max-w-md mx-auto flex flex-col">
-        <div className="flex flex-col items-center justify-center">
-          <span className="mt-12 font-mono font-bold text-3xl bg-gradient-to-r from-purple-500 via-orange-500 to-pink-500 bg-clip-text text-transparent inline-block">
+    <section className="h-full bg-black">
+      <div className="p-6 sm:p-4 gap-2 h-screen flex flex-col justify-center items-center max-w-xl mx-auto \">
+        {/* Component 1: Prompt to Client */}
+        <div className="mb-12 sm:mb-5 text-center text-white">
+          <p className="font-mono font-bold text-3xl bg-gradient-to-r from-purple-500 via-orange-500 to-pink-500 bg-clip-text text-transparent inline-block">
             CodeCrunch.
-          </span>
+          </p>
           <p className="mt-2 font-mono text-md sm:text-2xl text-white">
             Please sign in to your account.
           </p>
         </div>
 
-        {/* Email & Password */}
-        <div className="mt-8 px-4 py-4 sm:py-6 flex flex-col gap-6 rounded-md border border-white/25">
-
+        {/* Component 2: Email & Password Section */}
+        <div className="p-4 flex flex-col gap-6 w-full rounded-md border bg-white/5 border-white/20">
           {/* Email */}
           <div>
-            <div className="flex gap-2 items-center">
-              <MdOutlineMailOutline className="text-gray-200 h-8 w-8" />
+            <div className="flex gap-2">
+              <MdOutlineMailOutline className="text-gray-200 h-6 w-auto" />
               <span className="font-mono text-lg sm:text-xl text-white">
                 Email
               </span>
             </div>
+            
             <input
               type="email"
               placeholder="Enter Email"
-              className="mt-4 w-full rounded-md font-mono bg-black border border-white/25 px-4 py-2 text-white focus:outline-none"
+              className="mt-4 w-full rounded-md font-mono bg-black border border-white/15 px-4 py-2 text-white focus:outline-none"
             />
           </div>
 
-          {/* Password */}
-          <div className="">
-            <div className="flex gap-2 items-center">
-              <RiLockPasswordLine className="text-gray-200 h-8 w-8" />
+          {/* Password Section */}
+          <div className="mt-4">
+            <div className="flex gap-2">
+              <RiLockPasswordLine className="text-gray-200 h-6 w-auto" />
               <span className="font-mono text-lg sm:text-xl text-white">
                 Password
               </span>
             </div>
+            
             <input
               type="email"
               placeholder="Enter Password"
-              className="mt-4 w-full rounded-md font-mono bg-black border border-white/25 px-4 py-2 text-white focus:outline-none"
+              className="mt-4 w-full rounded-md font-mono bg-black border border-white/15 px-4 py-2 text-white focus:outline-none"
             />
           </div>
+
+
         </div>
 
-        <div className="mt-2 p-1">
-          <p className="font-mono text-white/80">
-            Forgot password?{" "}
-            <span className="underline underline-offset-3 hover:text-white">
-              Reset here
-            </span>
-            <span>.</span>
-          </p>
+        {/* Component 3: Forgot Password Section */}
+        <div className="pl-1 flex font-mono text-sm text-white/55 text-start w-full mb-4">
+          <p>Forgot Password?</p>
+          <span className="ml-1 underline underline-offset-auto">Reset here</span>
+          <span>.</span>
         </div>
 
-        {/* Signin */}
-        <div className="mt-12 flex justify-center w-full">
-          <div className="w-xs text-center border bg-purple-500/80 hover:bg-purple-500 rounded-md">
-            <button
-              className="p-1  rounded-xl font-mono text=lg sm:text-2xl
-              hover:text-white  text-white/90"
-            >
-              Sign In
-            </button>
-          </div>
+        {/* Component 4: Sign In button */}
+        <div className="border border-red-800 min-w-xs">
+          <button className="py-2 font-mono font-bold text-lg w-full rounded-md
+           text-white bg-purple-500">Sign In</button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
