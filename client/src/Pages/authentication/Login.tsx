@@ -4,10 +4,10 @@ import { RiLockPasswordLine } from "react-icons/ri";
 
 const Login = () => {
   return (
-    <section className="h-full bg-black">
-      <div className="p-6 sm:p-4 gap-2 h-screen flex flex-col justify-center items-center max-w-xl mx-auto \">
+    <section className="h-screen bg-black relative">
+      <div className="px-6 sm:pt-0 sm:p-4 gap-2 h-screen flex flex-col justify-center items-center max-w-xl mx-auto ">
         {/* Component 1: Prompt to Client */}
-        <div className="mb-12 sm:mb-5 text-center text-white">
+        <div className="mb-2 sm:mb-5 text-center text-white">
           <p className="font-mono font-bold text-3xl bg-gradient-to-r from-purple-500 via-orange-500 to-pink-500 bg-clip-text text-transparent inline-block">
             CodeCrunch.
           </p>
@@ -21,28 +21,23 @@ const Login = () => {
           {/* Email */}
           <div>
             <div className="flex gap-2">
-              <MdOutlineMailOutline className="text-gray-200 h-6 w-auto" />
+              <MdOutlineMailOutline className="text-sky-600 h-6 w-auto" />
               <span className="font-mono text-lg sm:text-xl text-white">
                 Email
               </span>
             </div>
 
-            {/* <input
-              type="email"
-              placeholder="Enter Email"
-              className="mt-4 w-full rounded-md font-mono bg-black border border-white/15 px-4 py-2 text-white focus:outline-none"
-            /> */}
             <Input
               type="email"
               placeholder="Enter Email"
-              className=" mt-2 font-mono text-lg"
+              className=" mt-2 font-mono text-sm" 
             />
           </div>
 
           {/* Password Section */}
           <div className="mt-4">
             <div className="flex gap-2">
-              <RiLockPasswordLine className="text-gray-200 h-6 w-auto" />
+              <RiLockPasswordLine className="text-green-600 h-6 w-auto" />
               <span className="font-mono text-lg sm:text-xl text-white">
                 Password
               </span>
@@ -56,7 +51,7 @@ const Login = () => {
             <Input
               type="password"
               placeholder="Enter Password"
-              className=" mt-2 font-mono text-lg"
+              className=" mt-2 font-mono text-sm"
             />
           </div>
         </div>
@@ -71,9 +66,9 @@ const Login = () => {
         </div>
 
         {/* Component 4: Sign In button */}
-        <div className="min-w-xs">
+        <div className="px-8 sm:p-0 flex w-full">
           <button
-            className="py-2 font-mono font-bold text-lg w-full rounded-md
+            className="py-2 font-mono font-bold text-md sm:text-lg w-full rounded-md
            text-white bg-purple-500"
           >
             Sign In
