@@ -4,7 +4,7 @@ import { RiLockPasswordLine } from "react-icons/ri";
 
 const Login = () => {
   return (
-    <section className="h-screen bg-black relative">
+    <section className="min-h-screen bg-black relative">
       <div className="px-6 sm:pt-0 sm:p-4 gap-2 h-screen flex flex-col justify-center items-center max-w-xl mx-auto ">
         {/* Component 1: Prompt to Client */}
         <div className="mb-2 sm:mb-5 text-center text-white">
@@ -17,10 +17,10 @@ const Login = () => {
         </div>
 
         {/* Component 2: Email & Password Section */}
-        <div className="p-4 flex flex-col gap-6 w-full rounded-md border bg-white/5 border-white/20">
+        <div className="p-4 gap-6 w-full flex flex-col rounded-md border bg-white/5 border-white/20">
           {/* Email */}
           <div>
-            <div className="flex gap-2">
+            <div className="flex gap-2 items-center">
               <MdOutlineMailOutline className="text-sky-600 h-6 w-auto" />
               <span className="font-mono text-lg sm:text-xl text-white">
                 Email
@@ -30,7 +30,7 @@ const Login = () => {
             <Input
               type="email"
               placeholder="Enter Email"
-              className=" mt-2 font-mono text-sm" 
+              className="mt-2 font-mono text-sm" 
             />
           </div>
 
