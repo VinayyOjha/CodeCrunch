@@ -35,7 +35,7 @@ const Hero = () => {
           {/* Code Crunch animation */}
 
           <motion.span
-            className="px-1 pt-2 md:pt-4 font-serif font-bold text-4xl sm:text-5xl md:text-7xl"
+            className="px-1 pt-3 md:pt-4 font-serif font-bold text-4xl sm:text-5xl md:text-7xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ease: "easeInOut", duration: 1.5, delay: 2 }}
@@ -56,7 +56,7 @@ const Hero = () => {
             </motion.span>
           </motion.span>
 
-          <div className="pt-4 mb-3">
+          <div className=" pt-2 sm:pt-4 mb-3">
             <div className="p-2 rounded-sm sm:bg-[#171717] font-mono text-md sm:text-xl text-center text-[#B3B3B3] ">
               <span className="text-neutral-300/60">"CodeCrunch</span> feels
               like a competition which lasts 45 days."
@@ -161,7 +161,7 @@ const Hero = () => {
                       : "rgba(23,23,23,0.05)",
                   borderColor:
                     hoveredIndex === 0
-                      ? "rgb(192,132,252)" // purple-400: rgb(192,132,252)
+                      ? "rgb(255,255,255,0.15)" // purple-400: rgb(192,132,252)
                       : "rgba(255,255,255,0.15)", // white/15: rgba(255,255,255,0.15)
                 }}
                 transition={{ delay: 0.2, ease: easeInOut }}
@@ -173,14 +173,20 @@ const Hero = () => {
                       hoveredIndex === 0 ? "animate-caret-blink" : ""
                     }`}
                   />
-                  <p className="text-white/60 ml-2">
+                  <p className="text-neutral-400  ml-2">
                     For the next 45 days, you will receive 2-3 coding problems
                     daily. The questions will cover topics like{" "}
-                    <span className="text-purple-200">
+                    <span className="text-purple-300">
                       arrays, strings, stacks, queues, linked lists
                     </span>
                     , etc.
-                    <p>Challenge yourself, improve and repeat.</p>
+                    <p>
+                      Depending on overall performance, topics like{" "}
+                      <span className="text-purple-300">
+                        graph, dynamic programming.
+                      </span>{" "}
+                      will be included
+                    </p>
                   </p>
                 </div>
               </motion.div>
@@ -203,7 +209,7 @@ const Hero = () => {
                       : "rgba(23,23,23,0.05)",
                   borderColor:
                     hoveredIndex === 1
-                      ? "rgb(248,113,113)" // red-400: rgb(192,132,252)
+                      ? "rgb(255,255,255,0.15)" // red-400: rgb(192,132,252)
                       : "rgba(255,255,255,0.15)", // white/15: rgba(255,255,255,0.15)
                 }}
                 transition={{ delay: 0.2, ease: easeInOut }}
@@ -216,10 +222,15 @@ const Hero = () => {
                       hoveredIndex === 1 ? "animate-caret-blink" : ""
                     }`}
                   />
-                  <p className="text-white/60 ml-2">
-                    The <strong>aim</strong> of this challenge is to build a
-                    strong <strong>daily coding habit</strong> and promote{" "}
-                    <strong>collaborative growth</strong>.
+                  <p className="text-neutral-400 ml-2">
+                    The <span className="text-red-200">aim</span> of this
+                    challenge is to build
+                    <span className="text-red-200">
+                      {" "}
+                      daily coding habit
+                    </span>{" "}
+                    and promote{" "}
+                    <p className="text-red-200">collaborative growth.</p>
                   </p>
                 </div>
               </motion.div>
@@ -242,7 +253,7 @@ const Hero = () => {
                       : "rgba(23,23,23,0.05)",
                   borderColor:
                     hoveredIndex === 2
-                      ? "rgb(187,247,208)" // green-200: rgb(187,247,208)
+                      ? "rgb(255,255,255,0.15)" // green-200: rgb(187,247,208)
                       : "rgba(255,255,255,0.15)", // white/15: rgba(255,255,255,0.15)
                 }}
                 transition={{ delay: 0.2, ease: easeInOut }}
@@ -254,16 +265,16 @@ const Hero = () => {
                       hoveredIndex === 2 ? "animate-caret-blink" : ""
                     }`}
                   />
-                  <p className="text-white/60 ml-2">
+                  <p className="text-neutral-400 ml-2">
                     <p>
-                      Depending on overall performance, the scope of questions
-                      asked will include topics like{" "}
-                      <span className="text-purple-100">
-                        graph, combinatorics, dynamic programming.
+                      <span className="font-bold text-white">Marking Scheme</span> Points allocated:{" "}
+                      <span className="text-green-300">
+                        Easy (5), Medium (8), Hard (10){" "}
                       </span>
-                    </p>
-                    Architecto tenetur est, esse adipisci quidem cum ipsum
-                    atque. Non fugit asperiores saepe animi itaque?
+                      </p>
+                      Seeking external help incurs a <span className="text-red-300">
+                        penalty of -2 points
+                      </span> . Solve authentically to maximize scores.
                   </p>
                 </div>
               </motion.div>
@@ -313,7 +324,7 @@ const Hero = () => {
                 </div>
 
                 <div className="flex gap-3 items-start ">
-                  <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-yellow-400" />
+                  <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-green-400" />
                   <p className="text-white/60">
                     <p className="text-white/40">No AI assistance:</p> Solutions
                     must be your own, without the use of large language models
@@ -322,7 +333,7 @@ const Hero = () => {
                 </div>
 
                 <div className="flex gap-3 items-start ">
-                  <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-green-400" />
+                  <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-yellow-400" />
                   <p className="text-white/60">
                     <p className="text-white/40">Honesty is Key:</p> Be honest
                     with yourself, and put in your best effort. No cheating!
@@ -338,7 +349,7 @@ const Hero = () => {
                 </div>
 
                 <div className="flex gap-3 items-start ">
-                  <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-green-400" />
+                  <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-cyan-400" />
                   <p className="text-white/60">
                     <p className="text-white/40">Collaborative Learning:</p>{" "}
                     Feel free to discuss problems with fellow participants, but

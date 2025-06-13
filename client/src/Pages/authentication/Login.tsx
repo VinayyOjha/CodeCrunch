@@ -17,7 +17,7 @@ const Login = () => {
         </div>
 
         {/* Component 2: Email & Password Section */}
-        <div className="p-4 gap-6 w-full flex flex-col rounded-md border bg-white/5 border-white/20">
+        <div className="p-4 gap-4 w-full flex flex-col rounded-md border bg-white/5 border-white/20">
           {/* Email */}
           <div>
             <div className="flex gap-2 items-center">
@@ -35,7 +35,7 @@ const Login = () => {
           </div>
 
           {/* Password Section */}
-          <div className="mt-4">
+          <div className="mt-2">
             <div className="flex gap-2">
               <RiLockPasswordLine className="text-green-600 h-6 w-auto" />
               <span className="font-mono text-lg sm:text-xl text-white">
