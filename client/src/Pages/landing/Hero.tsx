@@ -1,6 +1,6 @@
 import { FaCalendar, FaTrophy } from "react-icons/fa";
 import { FaCode } from "react-icons/fa6";
-import { easeInOut, motion } from "motion/react";
+import { easeInOut, hover, motion } from "motion/react";
 import { FaUserGroup } from "react-icons/fa6";
 import { IoCheckmarkDoneOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
@@ -8,19 +8,21 @@ import { useState } from "react";
 import { FaCircle } from "react-icons/fa";
 import AnimatedSection from "../../components/animations/ComponentAnimation";
 import BlurText from "../../blocks/TextAnimations/BlurText/BlurText";
+import TimerHero from "@/components/utilities/TimerHero";
 
 const Hero = () => {
   const navigate = useNavigate();
+  const targetDate = new Date("2025-07-16T00:00:00");
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   return (
-    <section className="p-3 mt-6">
-      <div className="mb-10 container max-w-6xl mx-auto">
+    <section className="p-3 mt-2">
+      <div className="mb-12 container max-w-6xl mx-auto">
         {/* Headings and catchy title */}
         <div className="p-2 flex flex-col justify-center items-center  ">
           <motion.p
             className="p-2 hidden md:block font-mono text-md text-center text-white/60"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ ease: "easeInOut", duration: 1, delay: 0.2 }}
           >
             What you fear is often just a barrier in your mind. Start typing.
@@ -54,7 +56,7 @@ const Hero = () => {
             </motion.span>
           </motion.span>
 
-          <div className="pt-4 mb-6">
+          <div className="pt-4 mb-3">
             <div className="p-2 rounded-sm sm:bg-[#171717] font-mono text-md sm:text-xl text-center text-[#B3B3B3] ">
               <span className="text-neutral-300/60">"CodeCrunch</span> feels
               like a competition which lasts 45 days."
@@ -63,15 +65,19 @@ const Hero = () => {
         </div>
 
         {/* Explore Now Button */}
-        <div onClick={() => navigate("/login")} className="flex justify-center">
+        <div onClick={() => navigate("/login")} className="text-center">
           <motion.button
-            className="p-2 px-4 text-center rounded-lg cursor-pointer font-mono border border-white/25 hover:bg-[#333333]/70 hover:text-white/80  text-white"
+            className="p-2 px-4 text-center rounded-lg cursor-pointer font-mono 
+            border border-white/25 hover:bg-[#333333]/70 hover:text-white/80  text-white"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
           >
             Explore Now
           </motion.button>
         </div>
+
+        {/* Timer */}
+        <TimerHero targetDate={targetDate} />
 
         {/* Details about Code Crunch */}
         <AnimatedSection>
@@ -128,26 +134,38 @@ const Hero = () => {
         </AnimatedSection>
 
         {/* About the competion*/}
-        <AnimatedSection>
-          <div className="mb-20 mt-20">
+
+        <div className="mb-20 mt-20">
+          <AnimatedSection>
             <p className="mb-10 text-center text-4xl lg:text-5xl text-white font-bold font-mono">
               About the competition
             </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-6 gap-6 p-6 max-w-4xl mx-auto font-mono rounded-lg bg-white/10">
+          </AnimatedSection>
+          <AnimatedSection>
+            <div className="grid grid-cols-1 sm:grid-cols-6 gap-6 p-6 max-w-4xl mx-auto font-mono rounded-lg bg-white/5">
               {/* Card 1 */}
               <motion.div
                 onHoverStart={() => setHoveredIndex(0)}
                 onHoverEnd={() => setHoveredIndex(null)}
+                initial={{ opacity: 0 }}
                 animate={{
+                  opacity: 1,
                   scale: hoveredIndex === 0 ? 1.02 : 1,
                   filter:
                     hoveredIndex !== null && hoveredIndex !== 0
                       ? "blur(2px)"
                       : "none",
+                  backgroundColor:
+                    hoveredIndex === 0
+                      ? "rgba(255,255,255,0.05)"
+                      : "rgba(23,23,23,0.05)",
+                  borderColor:
+                    hoveredIndex === 0
+                      ? "rgb(192,132,252)" // purple-400: rgb(192,132,252)
+                      : "rgba(255,255,255,0.15)", // white/15: rgba(255,255,255,0.15)
                 }}
                 transition={{ delay: 0.2, ease: easeInOut }}
-                className="p-3 sm:col-span-4 flex items-start justify-center rounded-md border border-white/15 hover:shadow-sm shadow-violet-400"
+                className="p-3 sm:col-span-4 flex items-start justify-center rounded-md border border-white/15"
               >
                 <div className="flex justify-start items-start">
                   <FaCircle
@@ -171,16 +189,26 @@ const Hero = () => {
               <motion.div
                 onHoverStart={() => setHoveredIndex(1)}
                 onHoverEnd={() => setHoveredIndex(null)}
+                initial={{ opacity: 0 }}
                 animate={{
+                  opacity: 1,
                   scale: hoveredIndex === 1 ? 1.04 : 1,
                   filter:
                     hoveredIndex !== null && hoveredIndex !== 1
                       ? "blur(2px)"
                       : "none",
+                  backgroundColor:
+                    hoveredIndex === 1
+                      ? "rgba(255,255,255,0.05)"
+                      : "rgba(23,23,23,0.05)",
+                  borderColor:
+                    hoveredIndex === 1
+                      ? "rgb(248,113,113)" // red-400: rgb(192,132,252)
+                      : "rgba(255,255,255,0.15)", // white/15: rgba(255,255,255,0.15)
                 }}
                 transition={{ delay: 0.2, ease: easeInOut }}
                 className="p-3 sm:col-span-2 rounded-md border
-                 border-white/15 hover:shadow-sm shadow-red-400"
+                 border-white/15 "
               >
                 <div className="flex">
                   <FaCircle
@@ -200,15 +228,25 @@ const Hero = () => {
               <motion.div
                 onHoverStart={() => setHoveredIndex(2)}
                 onHoverEnd={() => setHoveredIndex(null)}
+                initial={{ opacity: 0 }}
                 animate={{
+                  opacity: 1,
                   scale: hoveredIndex === 2 ? 1.02 : 1,
                   filter:
                     hoveredIndex !== null && hoveredIndex !== 2
                       ? "blur(2px)"
                       : "none",
+                  backgroundColor:
+                    hoveredIndex === 2
+                      ? "rgba(255,255,255,0.05)"
+                      : "rgba(23,23,23,0.05)",
+                  borderColor:
+                    hoveredIndex === 2
+                      ? "rgb(187,247,208)" // green-200: rgb(187,247,208)
+                      : "rgba(255,255,255,0.15)", // white/15: rgba(255,255,255,0.15)
                 }}
                 transition={{ delay: 0.2, ease: easeInOut }}
-                className="p-3 sm:col-span-6 items-start justify-center rounded-md border border-white/15 hover:shadow-sm shadow-green-200"
+                className="p-3 sm:col-span-6 items-start justify-center rounded-md border border-white/15"
               >
                 <div className="flex">
                   <FaCircle
@@ -230,8 +268,8 @@ const Hero = () => {
                 </div>
               </motion.div>
             </div>
-          </div>
-        </AnimatedSection>
+          </AnimatedSection>
+        </div>
 
         {/* Finalists and Top Finsihers */}
         <AnimatedSection>
@@ -269,42 +307,44 @@ const Hero = () => {
                 <div className="flex gap-3 items-start ">
                   <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-purple-400" />
                   <p className="text-white/60">
-                    <p className="text-white/40">Daily Problems:</p> Solve 2-3 coding problems daily for 45 days.
+                    <p className="text-white/40">Daily Problems:</p> Solve 2-3
+                    coding problems daily for 45 days.
                   </p>
                 </div>
 
                 <div className="flex gap-3 items-start ">
                   <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-yellow-400" />
                   <p className="text-white/60">
-                    <p className="text-white/40">No AI assistance:</p> Solutions must be your own, without the use of large language models (LLMs) or any other AI coding tools.
+                    <p className="text-white/40">No AI assistance:</p> Solutions
+                    must be your own, without the use of large language models
+                    (LLMs) or any other AI coding tools.
                   </p>
                 </div>
-
 
                 <div className="flex gap-3 items-start ">
                   <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-green-400" />
                   <p className="text-white/60">
-                    <p className="text-white/40">Honesty is Key:</p>  Be honest with yourself, and put in your best effort. No cheating!
+                    <p className="text-white/40">Honesty is Key:</p> Be honest
+                    with yourself, and put in your best effort. No cheating!
                   </p>
                 </div>
 
                 <div className="flex gap-3 items-start ">
                   <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-red-400" />
                   <p className="text-white/60">
-                    <p className="text-white/40">Problem Submission:</p>  Submit your solutions within the given timeframe (likely daily).
-
+                    <p className="text-white/40">Problem Submission:</p> Submit
+                    your solutions within the given timeframe (likely daily).
                   </p>
                 </div>
 
                 <div className="flex gap-3 items-start ">
                   <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-green-400" />
                   <p className="text-white/60">
-                    <p className="text-white/40">Collaborative Learning:</p>  Feel free to discuss problems with fellow participants, but ensure your submissions are your own work.
-
+                    <p className="text-white/40">Collaborative Learning:</p>{" "}
+                    Feel free to discuss problems with fellow participants, but
+                    ensure your submissions are your own work.
                   </p>
                 </div>
-
-                
               </div>
             </div>
           </div>

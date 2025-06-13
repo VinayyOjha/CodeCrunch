@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 
 const Landing = () => {
   return (
-    <div className="flex flex-col bg-black bg-radial-[at_5%_35%] from-white/2 via-gray-300/20  to-black to-75%">
+    <div className="flex flex-col bg-black ">
       <Navbar />
       <Hero />
     </div>
@@ -11,3 +11,5 @@ const Landing = () => {
 };
 
 export default Landing;
+
+// Background Gradient: bg-radial-[at_5%_35%] from-white/2 via-gray-600/20  to-black to-75%
