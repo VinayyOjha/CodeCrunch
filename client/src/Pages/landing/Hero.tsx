@@ -1,15 +1,17 @@
 import { FaCalendar, FaTrophy } from "react-icons/fa";
 import { FaCode } from "react-icons/fa6";
-import { motion } from "motion/react";
+import { easeInOut, motion } from "motion/react";
 import { FaUserGroup } from "react-icons/fa6";
 import { IoCheckmarkDoneOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
-
+import { useState } from "react";
+import { FaCircle } from "react-icons/fa";
 import AnimatedSection from "../../components/animations/ComponentAnimation";
 import BlurText from "../../blocks/TextAnimations/BlurText/BlurText";
 
 const Hero = () => {
   const navigate = useNavigate();
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   return (
     <section className="p-3 mt-6">
       <div className="mb-10 container max-w-6xl mx-auto">
@@ -125,6 +127,112 @@ const Hero = () => {
           </div>
         </AnimatedSection>
 
+        {/* About the competion*/}
+        <AnimatedSection>
+          <div className="mb-20 mt-20">
+            <p className="mb-10 text-center text-4xl lg:text-5xl text-white font-bold font-mono">
+              About the competition
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-6 gap-6 p-6 max-w-4xl mx-auto font-mono rounded-lg bg-white/10">
+              {/* Card 1 */}
+              <motion.div
+                onHoverStart={() => setHoveredIndex(0)}
+                onHoverEnd={() => setHoveredIndex(null)}
+                animate={{
+                  scale: hoveredIndex === 0 ? 1.02 : 1,
+                  filter:
+                    hoveredIndex !== null && hoveredIndex !== 0
+                      ? "blur(2px)"
+                      : "none",
+                }}
+                transition={{ delay: 0.2, ease: easeInOut }}
+                className="p-3 sm:col-span-4 flex items-start justify-center rounded-md border border-white/15 hover:shadow-sm shadow-violet-400"
+              >
+                <div className="flex justify-start items-start">
+                  <FaCircle
+                    className={`shrink-0 mt-2 h-2 w-2 text-purple-400 ${
+                      hoveredIndex === 0 ? "animate-caret-blink" : ""
+                    }`}
+                  />
+                  <p className="text-white/60 ml-2">
+                    For the next 45 days, you will receive 2-3 coding problems
+                    daily. The questions will cover topics like{" "}
+                    <span className="text-purple-200">
+                      arrays, strings, stacks, queues, linked lists
+                    </span>
+                    , etc.
+                    <p>Challenge yourself, improve and repeat.</p>
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Card 2 */}
+              <motion.div
+                onHoverStart={() => setHoveredIndex(1)}
+                onHoverEnd={() => setHoveredIndex(null)}
+                animate={{
+                  scale: hoveredIndex === 1 ? 1.04 : 1,
+                  filter:
+                    hoveredIndex !== null && hoveredIndex !== 1
+                      ? "blur(2px)"
+                      : "none",
+                }}
+                transition={{ delay: 0.2, ease: easeInOut }}
+                className="p-3 sm:col-span-2 rounded-md border
+                 border-white/15 hover:shadow-sm shadow-red-400"
+              >
+                <div className="flex">
+                  <FaCircle
+                    className={`shrink-0 mt-2 h-2 w-2 text-red-400 ${
+                      hoveredIndex === 1 ? "animate-caret-blink" : ""
+                    }`}
+                  />
+                  <p className="text-white/60 ml-2">
+                    The <strong>aim</strong> of this challenge is to build a
+                    strong <strong>daily coding habit</strong> and promote{" "}
+                    <strong>collaborative growth</strong>.
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Card 3 */}
+              <motion.div
+                onHoverStart={() => setHoveredIndex(2)}
+                onHoverEnd={() => setHoveredIndex(null)}
+                animate={{
+                  scale: hoveredIndex === 2 ? 1.02 : 1,
+                  filter:
+                    hoveredIndex !== null && hoveredIndex !== 2
+                      ? "blur(2px)"
+                      : "none",
+                }}
+                transition={{ delay: 0.2, ease: easeInOut }}
+                className="p-3 sm:col-span-6 items-start justify-center rounded-md border border-white/15 hover:shadow-sm shadow-green-200"
+              >
+                <div className="flex">
+                  <FaCircle
+                    className={`shrink-0 mt-2 h-2 w-2 text-green-300 ${
+                      hoveredIndex === 2 ? "animate-caret-blink" : ""
+                    }`}
+                  />
+                  <p className="text-white/60 ml-2">
+                    <p>
+                      Depending on overall performance, the scope of questions
+                      asked will include topics like{" "}
+                      <span className="text-purple-100">
+                        graph, combinatorics, dynamic programming.
+                      </span>
+                    </p>
+                    Architecto tenetur est, esse adipisci quidem cum ipsum
+                    atque. Non fugit asperiores saepe animi itaque?
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </AnimatedSection>
+
         {/* Finalists and Top Finsihers */}
         <AnimatedSection>
           <div className="mt-12 mb-20 w-full flex flex-col justify-center items-center text-white">
@@ -161,38 +269,42 @@ const Hero = () => {
                 <div className="flex gap-3 items-start ">
                   <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-purple-400" />
                   <p className="text-white/60">
-                    Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-                    consectetur adipisicing elit. Facilis, reprehenderit!
-                  </p>
-                </div>
-
-                <div className="flex gap-3 items-start ">
-                  <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-green-400" />
-                  <p className="text-white/60">
-                    Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-                    consectetur adipisicing
-                  </p>
-                </div>
-
-                <div className="flex gap-3 items-start ">
-                  <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-red-400" />
-                  <p className="text-white/60">Lorem ipsum dolor sit amet.</p>
-                </div>
-
-                <div className="flex gap-3 items-start ">
-                  <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-blue-400" />
-                  <p className="text-white/60">
-                    Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-                    consectetur adipisicing elit.
+                    <p className="text-white/40">Daily Problems:</p> Solve 2-3 coding problems daily for 45 days.
                   </p>
                 </div>
 
                 <div className="flex gap-3 items-start ">
                   <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-yellow-400" />
                   <p className="text-white/60">
-                    Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                    <p className="text-white/40">No AI assistance:</p> Solutions must be your own, without the use of large language models (LLMs) or any other AI coding tools.
                   </p>
                 </div>
+
+
+                <div className="flex gap-3 items-start ">
+                  <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-green-400" />
+                  <p className="text-white/60">
+                    <p className="text-white/40">Honesty is Key:</p>  Be honest with yourself, and put in your best effort. No cheating!
+                  </p>
+                </div>
+
+                <div className="flex gap-3 items-start ">
+                  <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-red-400" />
+                  <p className="text-white/60">
+                    <p className="text-white/40">Problem Submission:</p>  Submit your solutions within the given timeframe (likely daily).
+
+                  </p>
+                </div>
+
+                <div className="flex gap-3 items-start ">
+                  <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-green-400" />
+                  <p className="text-white/60">
+                    <p className="text-white/40">Collaborative Learning:</p>  Feel free to discuss problems with fellow participants, but ensure your submissions are your own work.
+
+                  </p>
+                </div>
+
+                
               </div>
             </div>
           </div>
@@ -212,15 +324,14 @@ const Hero = () => {
             />
           </div>
 
-          {/* <p className="mb-5 text-center text-4xl lg:text-5xl text-white font-bold font-mono">
-            Ready to compete?
-          </p> */}
-
           <p className="mb-4 text-center text-xl sm:text-2xl text-white/50 font-mono">
             Join the 45 days CodeCrunch competition and elevate your coding
             problem solving apprpach.
           </p>
-          <div onClick={() => navigate("/register")} className="flex justify-center">
+          <div
+            onClick={() => navigate("/register")}
+            className="flex justify-center"
+          >
             <button className="p-2 rounded-md items-center font-mono text-xl text-white bg-violet-700">
               Register Now!
             </button>
