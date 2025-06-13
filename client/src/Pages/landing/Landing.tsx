@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 
 const Landing = () => {
   return (
-    <div className="flex flex-col bg-black ">
+    <div className="flex flex-col bg-black">
       <Navbar />
       <Hero />
     </div>
