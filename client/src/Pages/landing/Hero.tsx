@@ -1,6 +1,6 @@
 import { FaCalendar, FaTrophy } from "react-icons/fa";
 import { FaCode } from "react-icons/fa6";
-import { easeInOut, hover, motion } from "motion/react";
+import { easeInOut, motion } from "motion/react";
 import { FaUserGroup } from "react-icons/fa6";
 import { IoCheckmarkDoneOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
