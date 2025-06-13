@@ -44,8 +44,8 @@ const Hero = () => {
                 backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
               }}
               transition={{
-                duration: 8,
-                ease: "linear",
+                duration: 4,
+                ease: "easeIn",
                 repeat: Infinity,
               }}
               style={{ backgroundSize: "200% 200%" }}
