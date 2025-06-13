@@ -25,7 +25,7 @@ const Register = () => {
             <p className="font-mono font-bold text-3xl bg-gradient-to-r from-purple-500 via-orange-500 to-pink-500 bg-clip-text text-transparent inline-block">
               CodeCrunch.
             </p>
-            <p className="mt-2 font-mono text-md sm:text-2xl text-white">
+            <p className=" font-mono text-md sm:text-2xl text-white">
               Create your account.
             </p>
           </div>
@@ -39,7 +39,7 @@ const Register = () => {
             {/* Name */}
             <div>
               <div className="flex gap-2 items-center">
-                <IoMdPerson className="text-green-400 h-6 w-auto" />
+                <IoMdPerson className="text-indigo-400 h-6 w-auto" />
                 <span className="font-mono text-md text-white">Enter Name</span>
               </div>
 
@@ -53,7 +53,7 @@ const Register = () => {
             {/* Email */}
             <div>
               <div className="flex gap-2 items-center">
-                <MdOutlineMailOutline className="text-yellow-400 h-6 w-auto" />
+                <MdOutlineMailOutline className="text-gray-300 h-6 w-auto" />
                 <span className="font-mono text-md text-white ">
                   Enter Colg MailId
                 </span>
@@ -71,7 +71,7 @@ const Register = () => {
             {/* Password */}
             <div>
               <div className="flex gap-2 items-center">
-                <RiLockPasswordLine className="text-red-500 h-6 w-auto" />
+                <RiLockPasswordLine className="text-yellow-300 h-6 w-auto" />
                 <span className="font-mono text-md text-white text-md">
                   Enter password
                 </span>

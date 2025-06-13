@@ -315,43 +315,43 @@ const Hero = () => {
 
             <div className="p-6 max-w-4xl mx-auto rounded-lg bg-white/5">
               <div className="space-y-6 font-mono">
-                <div className="flex gap-3 items-start ">
+                <div className="flex gap-3 items-start text-lg">
                   <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-purple-400" />
-                  <p className="text-white/60">
-                    <p className="text-white/40">Daily Problems:</p> Solve 2-3
+                  <p className="text-neutral-500">
+                    <p className="text-white/90 text-xl">Daily Problems:</p> Solve 2-3
                     coding problems daily for 45 days.
                   </p>
                 </div>
 
-                <div className="flex gap-3 items-start ">
+                <div className="flex gap-3 items-start text-lg">
                   <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-green-400" />
-                  <p className="text-white/60">
-                    <p className="text-white/40">No AI assistance:</p> Solutions
+                  <p className="text-neutral-500">
+                    <p className="text-white/90 text-xl">No AI assistance:</p> Solutions
                     must be your own, without the use of large language models
                     (LLMs) or any other AI coding tools.
                   </p>
                 </div>
 
-                <div className="flex gap-3 items-start ">
+                <div className="flex gap-3 items-start text-lg">
                   <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-yellow-400" />
-                  <p className="text-white/60">
-                    <p className="text-white/40">Honesty is Key:</p> Be honest
+                  <p className="text-neutral-500">
+                    <p className="text-white/90 text-xl">Honesty is Key:</p> Be honest
                     with yourself, and put in your best effort. No cheating!
                   </p>
                 </div>
 
-                <div className="flex gap-3 items-start ">
+                <div className="flex gap-3 items-start text-lg">
                   <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-red-400" />
-                  <p className="text-white/60">
-                    <p className="text-white/40">Problem Submission:</p> Submit
+                  <p className="text-neutral-500">
+                    <p className="text-white/90 text-xl">Problem Submission:</p> Submit
                     your solutions within the given timeframe (likely daily).
                   </p>
                 </div>
 
-                <div className="flex gap-3 items-start ">
+                <div className="flex gap-3 items-start text-lg">
                   <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-cyan-400" />
-                  <p className="text-white/60">
-                    <p className="text-white/40">Collaborative Learning:</p>{" "}
+                  <p className="text-neutral-500">
+                    <p className="text-white/90 text-xl">Collaborative Learning:</p>{" "}
                     Feel free to discuss problems with fellow participants, but
                     ensure your submissions are your own work.
                   </p>
@@ -375,7 +375,7 @@ const Hero = () => {
             />
           </div>
 
-          <p className="mb-4 text-center text-xl sm:text-2xl text-white/50 font-mono">
+          <p className="mb-4 text-center text-lg sm:text-xl text-white/50 font-mono">
             Join the 45 days CodeCrunch competition and elevate your coding
             problem solving apprpach.
           </p>
