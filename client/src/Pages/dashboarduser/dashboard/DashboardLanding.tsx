@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 // import { motion } from "motion/react";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -7,7 +6,6 @@ import {
   CardContent,
   CardHeader,
   CardTitle,
-  CardDescription,
 } from "@/components/ui/card";
 import { motion } from "framer-motion";
 
