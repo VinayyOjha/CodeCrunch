@@ -16,7 +16,7 @@ const Hero = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   return (
     <section className="p-3 mt-2">
-      <div className="mb-12 container max-w-6xl mx-auto">
+      <div className="mb-8 container max-w-6xl mx-auto">
         {/* Headings and catchy title */}
         <div className="p-2 flex flex-col justify-center items-center  ">
           <motion.p
@@ -284,8 +284,8 @@ const Hero = () => {
 
         {/* Finalists and Top Finsihers */}
         <AnimatedSection>
-          <div className="mt-12 mb-20 w-full flex flex-col justify-center items-center text-white">
-            <span className="mt-16 mb-12 font-mono font-bold text-center text-4xl lg:text-5xl">
+          <div className="mt-6 mb-20 w-full flex flex-col justify-center items-center text-white">
+            <span className="mt-6 mb-12 font-mono font-bold text-center text-4xl lg:text-5xl">
               Prizes & Rewards
             </span>
             <div className="w-full max-w-4xl rounded-lg bg-white/5 border-white/10">

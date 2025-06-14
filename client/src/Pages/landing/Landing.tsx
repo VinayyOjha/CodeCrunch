@@ -1,11 +1,13 @@
 import Hero from "./Hero";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 const Landing = () => {
   return (
     <div className="flex flex-col bg-black">
       <Navbar />
       <Hero />
+      <Footer />
     </div>
   );
 };
