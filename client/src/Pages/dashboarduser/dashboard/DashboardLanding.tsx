@@ -4,7 +4,6 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { MdOutlineDashboard } from "react-icons/md";
-import { CiCalendar } from "react-icons/ci";
 import { HourglassLowIcon } from "@phosphor-icons/react";
 import { FileCppIcon } from "@phosphor-icons/react";
 
