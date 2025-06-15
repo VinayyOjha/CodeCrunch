@@ -4,19 +4,39 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { MdOutlineDashboard } from "react-icons/md";
-
+import { CiCalendar } from "react-icons/ci";
+import { HourglassLowIcon } from "@phosphor-icons/react";
+import { FileCppIcon } from "@phosphor-icons/react";
 
 const DashboardLanding = () => {
   return (
-    <section className="w-full min-h-screen 
+    <section
+      className="w-full min-h-screen 
   bg-gradient-to-bl from-neutral-800 to-blue-950 
 
-">
-      <motion.div className="px-2 py-3 font-mono max-w-7xl mx-auto font-bold text-3xl text-neutral-300 flex gap-1 items-center">
-        <MdOutlineDashboard></MdOutlineDashboard>
-        <div>Dashboard</div>
+"
+    >
+      <motion.div className="px-2 py-3 font-mono max-w-6xl mx-auto sm:flex justify-between items-center">
+        <div className="flex gap-1 items-center text-3xl">
+          <MdOutlineDashboard className="text-amber-400"></MdOutlineDashboard>
+          <div className="font-bold bg-gradient-to-r from-yellow-300 via-pink-400 to-purple-500 bg-clip-text text-transparent">
+            Dashboard
+          </div>
+        </div>
+
+        {/* Date tag */}
+        <Badge className="mr-1 px-2 py-0.5 flex gap-2 rounded-full bg-purple-500/20 border border-purple-600 text-purple-300 items-center">
+          {/* <CiCalendar size={36}></CiCalendar> */}
+          <div className="flex text-white/80 font-mono">
+            <div className="relative">
+              <div className="px-0.5 h-2 w-2 rounded-full bg-purple-400"></div>
+              <div className="absolute inset-0 animate-ping h-2 w-2 rounded-full bg-purple-400"></div>
+            </div>
+          </div>
+          <span className="text-xs">June 14th, 2025</span>
+        </Badge>
       </motion.div>
-      <div className="p-4 md:p-3 lg:p-2 gap-3 relative container max-w-5xl mx-auto flex">
+      <div className="p-4 md:p-3 lg:p-2 gap-3 relative container max-w-6xl mx-auto flex">
         {/* left outer container  */}
         <div className="gap-3 flex-4 flex flex-col">
           {/* top container */}
@@ -25,25 +45,28 @@ const DashboardLanding = () => {
             <motion.div
               className="p-1  fex-1 lg:flex-6 font-mono rounded-md bg-primary boder border-white/15"
               initial={{ scale: 1, opacity: 0.9 }}
-              whileHover={{ scale: 1.03, opacity: 1 }}
+              whileHover={{ scale: 1.01, opacity: 1 }}
               transition={{ ease: "easeInOut", delay: 0.3 }}
             >
               <div className="mx-4 mt-2">
                 <div className=" flex items-center gap-1.5 ">
-                  <div className="h-3 w-3 rounded-full bg-purple-500"></div>
-
+                  {/* <div className="h-3 w-3 rounded-full bg-purple-500"></div> */}
+                  <FileCppIcon color="violet" size={32}></FileCppIcon>
                   <p className="text-purple-400 text-xl sm:text-2xl">
                     Problems Of The Day:
                   </p>
                 </div>
-                <Badge className="sm:mt-1 rounde-sm text-right font-bold text-xs shadow text-white bg-gray-500 ">
+                <Badge
+                  className="sm:mt-1 rounde-sm text-right font-bold text-xs
+                 text-gray-400 bg-gray-400/20 "
+                >
                   June 14th
                 </Badge>
               </div>
               <Card className="bg-primary border-none ">
                 <CardContent className="space-y-4 text-md text-white">
                   <div className="flex gap-1 justify-between items-center ">
-                    <span className=" text-xl">
+                    <div className=" text-xl">
                       <a
                         href="https://youtube.com/shorts/NLFoSt4Iuxc?feature=shared"
                         className="hover:underline"
@@ -52,9 +75,19 @@ const DashboardLanding = () => {
                       >
                         Triplet Sum in Array.
                       </a>
-                    </span>
+                      <div className="mt-1 flex">
+                        <div
+                          className="mr-1 px-2 py-0.5 flex gap-2 rounded-full 
+                      bg-yellow-500/20 hover:bg-primary/80 
+                      border border-yellow-300 text-amber-300 items-center"
+                        >
+                          <span className="text-xs">Medium</span>
+                        </div>
+                        <p className="text-neutral-400 text-xs">100pts</p>
+                      </div>
+                    </div>
 
-                    <Checkbox className="h-4 w-4 border-gray data-[state=checked]:bg-purple-500 data-[state=checked]:border-purple-500">
+                    <Checkbox className="h-5 w-5 border data-[state=checked]:bg-orange-500 data-[state=checked]:border-orange-800">
                       {" "}
                     </Checkbox>
                   </div>
@@ -69,8 +102,18 @@ const DashboardLanding = () => {
                       >
                         Longest Span in two Binary Arrays.
                       </a>
+                      <div className="mt-1 flex">
+                        <div
+                          className="mr-1 px-2 py-0.5 flex gap-2 rounded-full 
+                      bg-red-500/30 hover:bg-primary/80 
+                      border border-red-500/30 text-red-400 items-center"
+                        >
+                          <span className="text-xs">Hard</span>
+                        </div>
+                        <p className="text-neutral-400 text-xs">200pts</p>
+                      </div>
                     </span>
-                    <Checkbox className="h-4 w-4 border-gray data-[state=checked]:bg-purple-500 data-[state=checked]:border-purple-500">
+                    <Checkbox className="h-5 w-5 data-[state=checked]:bg-orange-500 data-[state=checked]:border-orange-500">
                       {" "}
                     </Checkbox>
                   </div>
@@ -79,33 +122,42 @@ const DashboardLanding = () => {
             </motion.div>
 
             {/* Stats */}
-            <div className="h-full felx-1 lg:flex-4 rounded-md bg-primary border-white/15"></div>
+            <div className="h-full felx-1 lg:flex-4 rounded-md bg-primary border-white/15">
+              <Card className="bg-[#171717] border border-none h-full ">
+
+              </Card>
+            </div>
           </div>
 
           {/* bottom container - previous problems  */}
           <motion.div
             className="p-1 flex-1 lg:flex-6  rounded-md bg-[#171717] brder border-white/15"
             initial={{ scale: 1, opacity: 0.9 }}
-            whileHover={{ scale: 1.03, opacity: 1 }}
+            whileHover={{ scale: 1.01, opacity: 1 }}
             transition={{ ease: "easeInOut", delay: 0.3 }}
           >
-            <div className="mx-3 mt-2 font-mono sm:flex justify-between">
-              <div className="text-white  text-xl sm:text-2xl">
-                Past problems:
+            <div className="mx-6 mt-2 font-mono sm:flex justify-between">
+              <div className="flex gap-1 items-center">
+                <HourglassLowIcon size={32} color="#4ADE80" />
+                <div className="text-[#4ADE80]  text-xl sm:text-2xl">
+                  Past problems:
+                </div>
               </div>
-              <Badge className="sm:mt-1 text-right text-xs shadow
-               text-black bg-red-300 ">
-                Questions untill now : <strong>28</strong>
+              <Badge
+                className="rounded-full text-right text-xs shadow font-bold border
+               border-pink-700/50  text-pink-300 bg-pink-600/20 "
+              >
+                Questions untill now: <strong>28</strong>
               </Badge>
             </div>
             <Card className="bg-[#171717] border-none font-mono">
               <CardContent className="space-y-4 text-md ">
-                <ScrollArea className="px-4  h-[300px] sm:h-[215px] w-full rounded-md bg-[#333333] text-white border border-white/15">
+                <ScrollArea className="px-4  h-[300px] sm:h-[215px] w-full rounded-md bg-[#141111] text-white border border-white/15">
                   <div className="mt-6 flex flex-col">
                     <div>
-                      <span className="px-4 py-1 bg-yellow-100 text-black  rounded-2xl text-center">
+                      <Badge className="px-4 bg-blue-500/30 text-white  rounded-2xl text-center">
                         12th June
-                      </span>
+                      </Badge>
                     </div>
                     <div className="py-2 flex gap-1 justify-between items-center ">
                       <span className="text-md sm:text-lg">
@@ -115,7 +167,7 @@ const DashboardLanding = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                         Inserting a node in LinkedList.
+                          Inserting a node in LinkedList.
                         </a>
                       </span>
                     </div>
@@ -135,9 +187,9 @@ const DashboardLanding = () => {
                   </div>
                   <div className="mt-6 flex flex-col">
                     <div>
-                      <span className="px-4 py-1 bg-yellow-100 text-black  rounded-2xl text-center">
+                      <Badge className="px-4 bg-blue-500/30 text-white  rounded-2xl text-center">
                         11th June
-                      </span>
+                      </Badge>
                     </div>
                     <div className="py-2 flex gap-1 justify-between items-center ">
                       <span className="">
@@ -147,7 +199,7 @@ const DashboardLanding = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          Connect `n` ropes with minimal cost.  
+                          Connect `n` ropes with minimal cost.
                         </a>
                       </span>
                     </div>
@@ -167,9 +219,9 @@ const DashboardLanding = () => {
                   </div>
                   <div className="mt-6 flex flex-col">
                     <div>
-                      <span className="px-4 py-1 bg-yellow-100 text-black  rounded-2xl text-center">
+                      <Badge className="px-4 bg-blue-500/30 text-white  rounded-2xl text-center">
                         10th June
-                      </span>
+                      </Badge>
                     </div>
                     <div className="py-2 flex gap-1 justify-between items-center ">
                       <span className="">
@@ -179,7 +231,8 @@ const DashboardLanding = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          Program for Shortest Job First (or SJF) CPU Scheduling.
+                          Program for Shortest Job First (or SJF) CPU
+                          Scheduling.
                         </a>
                       </span>
                     </div>
@@ -199,9 +252,9 @@ const DashboardLanding = () => {
                   </div>
                   <div className="mt-6 flex flex-col">
                     <div>
-                      <span className="px-4 py-1 bg-yellow-100 text-black  rounded-2xl text-center">
+                      <Badge className="px-4 bg-blue-500/30 text-white  rounded-2xl text-center">
                         09th June
-                      </span>
+                      </Badge>
                     </div>
                     <div className="py-2 flex gap-1 justify-between items-center ">
                       <span className="">
@@ -231,9 +284,9 @@ const DashboardLanding = () => {
                   </div>
                   <div className="mt-6 flex flex-col">
                     <div>
-                      <span className="px-4 py-1 bg-yellow-100 text-black  rounded-2xl text-center">
+                      <Badge className="px-4 bg-blue-500/30 text-white  rounded-2xl text-center">
                         08th June
-                      </span>
+                      </Badge>
                     </div>
                     <div className="py-2 flex gap-1 justify-between items-center ">
                       <span className="">
@@ -243,7 +296,7 @@ const DashboardLanding = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                         Count total Nodes in a COMPLETE Binary Tree.
+                          Count total Nodes in a COMPLETE Binary Tree.
                         </a>
                       </span>
                     </div>
@@ -263,9 +316,9 @@ const DashboardLanding = () => {
                   </div>
                   <div className="mt-6 flex flex-col">
                     <div>
-                      <span className="px-4 py-1 bg-yellow-100 text-black  rounded-2xl text-center">
+                      <Badge className="px-4 bg-blue-500/30 text-white  rounded-2xl text-center">
                         07th June
-                      </span>
+                      </Badge>
                     </div>
                     <div className="py-2 flex gap-1 justify-between items-center ">
                       <span className="">
