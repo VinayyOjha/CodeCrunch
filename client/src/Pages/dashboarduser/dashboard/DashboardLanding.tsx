@@ -6,6 +6,9 @@ import { motion } from "framer-motion";
 import { MdOutlineDashboard } from "react-icons/md";
 import { HourglassLowIcon } from "@phosphor-icons/react";
 import { FileCppIcon } from "@phosphor-icons/react";
+import { ChartLineUpIcon } from "@phosphor-icons/react";
+import { TrophyIcon } from "@phosphor-icons/react";
+import { StarIcon } from "@phosphor-icons/react";
 
 const DashboardLanding = () => {
   return (
@@ -49,7 +52,6 @@ const DashboardLanding = () => {
             >
               <div className="mx-4 mt-2">
                 <div className=" flex items-center gap-1.5 ">
-                  {/* <div className="h-3 w-3 rounded-full bg-purple-500"></div> */}
                   <FileCppIcon color="violet" size={32}></FileCppIcon>
                   <p className="text-purple-400 text-xl sm:text-2xl">
                     Problems Of The Day:
@@ -121,10 +123,45 @@ const DashboardLanding = () => {
             </motion.div>
 
             {/* Stats */}
-            <div className="h-full felx-1 lg:flex-4 rounded-md bg-primary border-white/15">
-              <Card className="bg-[#171717] border border-none h-full ">
+            <div className="px-3 py-3 h-full felx-1 lg:flex-4 rounded-md bg-primary border-white/15">
+              <div className="flex flex-col h-full">
+                {/* Title div */}
+                <div className="flex flex-col">
+                  <div className="flex gap-1.5">
+                    <ChartLineUpIcon
+                      color="#60A5FA"
+                      size={32}
+                    ></ChartLineUpIcon>
+                    <p className="text-blue-400 text-xl sm:text-2xl font-mono">
+                      Your Analytics:
+                    </p>
+                  </div>
+                  <p className="text-md font-mono text-neutral-500">
+                    Welcome Back, Neeraj!
+                  </p>
+                </div>
 
-              </Card>
+                {/* Stats */}
+                <div className=" flex gap-6 px-2 mt-6">
+                  {/* Rank */}
+                  <div className="py-3 text-center font-mono flex-1 rounded-md border bg-gradient-to-b from-purple-500/20 to-pink-500/20 border-purple-400/30">
+                    <div className="flex gap-1 items-center justify-center">
+                      <TrophyIcon color="#FACC15" size={16} />
+                      <p className="text-sm text-white/70">Rank</p>
+                    </div>
+                    <p className="text-purple-400 text-2xl">#15</p>
+                  </div>
+
+                  {/* Score */}
+                  <div className="py-3 text-center flex-1 rounded-md border bg-gradient-to-b from-[#60A5FA]/30  border-[#60A5FA]/50">
+                    <div className="flex gap-1 items-center justify-center">
+                      <StarIcon color="#60A5FA" size={16} />
+                      <p className="text-sm text-white/70">Score</p>
+                    </div>
+                    <p className="text-[#60A5FA] text-2xl">2350</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
