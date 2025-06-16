@@ -16,8 +16,28 @@ import { studentsData } from "./rough";
 import { MedalIcon } from "lucide-react";
 import { PiMedal } from "react-icons/pi";
 
+
 //main background:bg-gradient-to-bl from-neutral-800 to-blue-950
 const DashboardLanding = () => {
+  const getOrdinal = (day: number): string => {
+    if (day > 3 && day < 21) return "th";
+    switch (day % 10) {
+      case 1:
+        return "st";
+      case 2:
+        return "nd";
+      case 3:
+        return "rd";
+      default:
+        return "th";
+    }
+  };
+
+  const today = new Date();
+  const day = today.getDate();
+  const month = today.toLocaleString("default", { month: "long" });
+  const year = today.getFullYear();
+  const ordinal = getOrdinal(day);
   return (
     <section
       className="w-full min-h-screen bg-[#2a2929]
@@ -29,7 +49,7 @@ const DashboardLanding = () => {
           <div className="font-bold bg-gradient-to-r from-yellow-300 via-pink-400 to-purple-500 bg-clip-text text-transparent">
             Dashboard:
           </div>
-            {/* <p className="font-mono font-bold text-blue-500">CodeCrunch</p> */}
+          {/* <p className="font-mono font-bold text-blue-500">CodeCrunch</p> */}
         </div>
 
         {/* Date tag */}
@@ -41,7 +61,7 @@ const DashboardLanding = () => {
               <div className="absolute inset-0 animate-ping h-2 w-2 rounded-full bg-purple-400"></div>
             </div>
           </div>
-          <span className="text-xs">June 14th, 2025</span>
+          <span className="text-xs">{`${month} ${day}${ordinal}, ${year}`}</span>
         </Badge>
       </motion.div>
       <div className="p-4 md:p-3 lg:p-2 gap-3 relative container max-w-6xl mx-auto flex">
@@ -67,7 +87,7 @@ const DashboardLanding = () => {
                   className="sm:mt-1 rounde-sm text-right font-bold text-xs
                  text-gray-400 bg-gray-400/20 "
                 >
-                  June 14th
+                  <span className="text-xs">{`${month} ${day}${ordinal}`}</span>
                 </Badge>
               </div>
               <Card className="bg-primary border-none ">
@@ -422,9 +442,9 @@ const DashboardLanding = () => {
 
         {/* right outer container */}
         <motion.div
-          className="max-h-160 gap-1 flex-col hidden md:flex flex-2 rounded-md bg-primary border-white/15 hover:shadow shadow-amber-200  "
+          className="max-h-160 gap-1 flex-col hidden md:flex flex-2 rounded-md bg-primary border-white/15 shadow transition-shadow duration-300 hover:shadow-lg hover:shadow-amber-200 "
           initial={{ scale: 1, opacity: 0.9 }}
-          whileHover={{ scale: 1.01, opacity: 1}}
+          whileHover={{ scale: 1.01, opacity: 1 }}
           transition={{ ease: "easeInOut", delay: 0.3 }}
         >
           {/* Heading */}
