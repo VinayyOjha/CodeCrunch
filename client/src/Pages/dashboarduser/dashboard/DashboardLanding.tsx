@@ -4,26 +4,32 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { MdOutlineDashboard } from "react-icons/md";
-import { HourglassLowIcon } from "@phosphor-icons/react";
+import { HourglassLowIcon, RankingIcon } from "@phosphor-icons/react";
 import { FileCppIcon } from "@phosphor-icons/react";
 import { ChartLineUpIcon } from "@phosphor-icons/react";
 import { TrophyIcon } from "@phosphor-icons/react";
 import { StarIcon } from "@phosphor-icons/react";
+import { LightningIcon } from "@phosphor-icons/react";
+import { CrownIcon } from "@phosphor-icons/react";
+import ShinyText from "../../../blocks/TextAnimations/ShinyText/ShinyText";
+import { studentsData } from "./rough";
+import { MedalIcon } from "lucide-react";
+import { PiMedal } from "react-icons/pi";
 
+//main background:bg-gradient-to-bl from-neutral-800 to-blue-950
 const DashboardLanding = () => {
   return (
     <section
-      className="w-full min-h-screen 
-  bg-gradient-to-bl from-neutral-800 to-blue-950 
-
-"
+      className="w-full min-h-screen bg-[#2a2929]
+  "
     >
       <motion.div className="px-2 py-3 font-mono max-w-6xl mx-auto sm:flex justify-between items-center">
         <div className="flex gap-1 items-center text-3xl">
           <MdOutlineDashboard className="text-amber-400"></MdOutlineDashboard>
           <div className="font-bold bg-gradient-to-r from-yellow-300 via-pink-400 to-purple-500 bg-clip-text text-transparent">
-            Dashboard
+            Dashboard:
           </div>
+            {/* <p className="font-mono font-bold text-blue-500">CodeCrunch</p> */}
         </div>
 
         {/* Date tag */}
@@ -123,7 +129,12 @@ const DashboardLanding = () => {
             </motion.div>
 
             {/* Stats */}
-            <div className="px-3 py-3 h-full felx-1 lg:flex-4 rounded-md bg-primary border-white/15">
+            <motion.div
+              className="px-3 py-3 h-full felx-1 lg:flex-4 rounded-md bg-primary border-white/15"
+              initial={{ scale: 1, opacity: 0.9 }}
+              whileHover={{ scale: 1.01, opacity: 1 }}
+              transition={{ ease: "easeInOut", delay: 0.3 }}
+            >
               <div className="flex flex-col h-full">
                 {/* Title div */}
                 <div className="flex flex-col">
@@ -161,8 +172,29 @@ const DashboardLanding = () => {
                     <p className="text-[#60A5FA] text-2xl">2350</p>
                   </div>
                 </div>
+
+                {/* question Solved */}
+                <div className="mt-4 gap-2 flex flex-col items-betweeen justify-center font-mono  h-full text-white/70">
+                  <div className="flex justify-between">
+                    <p>Questions Solved</p>
+                    <p className="text-white">25</p>
+                  </div>
+
+                  {/* Current Streak */}
+                  <div className="flex justify-between items-center ">
+                    <p>Current Streak</p>
+                    <div className="flex text-[#e7914b]">
+                      <LightningIcon size={20} color="#FB923C" />
+                      <ShinyText
+                        text="12 days"
+                        speed={5}
+                        className="text-orange-400"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* bottom container - previous problems  */}
@@ -389,7 +421,63 @@ const DashboardLanding = () => {
         </div>
 
         {/* right outer container */}
-        <div className="max-h-[600px] hidden md:flex flex-2 rounded-md bg-primary border-white/15"></div>
+        <motion.div
+          className="max-h-160 gap-1 flex-col hidden md:flex flex-2 rounded-md bg-primary border-white/15 hover:shadow shadow-amber-200  "
+          initial={{ scale: 1, opacity: 0.9 }}
+          whileHover={{ scale: 1.01, opacity: 1}}
+          transition={{ ease: "easeInOut", delay: 0.3 }}
+        >
+          {/* Heading */}
+          <div className="px-3 py-3 flex-col gap-0.5 font-mono w-full">
+            <div className="flex gap-1 item-center">
+              <RankingIcon size={32} color="#FACC15" />
+              <p className=" text-2xl text-amber-300">LeaderBoard</p>
+            </div>
+            <p className="text-md text-white/40">Top performers of the week</p>
+          </div>
+
+          {/* ScrollArea */}
+          <ScrollArea className="md:h-130 px-6 ">
+            <div className="space-y-2 ">
+              {studentsData.map((data, indx) => {
+                return (
+                  <div
+                    className={`p-4 rounded-lg font-mono text-white text-md ${
+                      data.rank <= 3
+                        ? " bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-500/30"
+                        : " bg-gray-700/30 hover:bg-gray-700/50"
+                    }`}
+                  >
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="flex gap-1 ">
+                        <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-700 text-sm font-bold">
+                          {data.rank === 1 && <CrownIcon size={20} />}
+                          {data.rank === 2 && <MedalIcon size={20} />}
+                          {data.rank === 3 && (
+                            <PiMedal className="h-5 w-5"></PiMedal>
+                          )}
+                          <span className={`${indx < 3 ? "hidden" : "inline"}`}>
+                            {indx + 1}
+                          </span>
+                        </div>
+                        <div className="flex flex-col  justify-center text-start">
+                          <p>{data.name}</p>
+                          <p className="text-sm text-white/70">
+                            {data.questionsSolved} <span>solved</span>
+                          </p>
+                        </div>
+                      </div>
+                      <div className="font-mono gap-0.5 text-center">
+                        <p>{data.score}</p>
+                        <p className="text-sm text-white/70">points</p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </ScrollArea>
+        </motion.div>
 
         {/* Nav Button */}
         <div className="block md:hidden fixed right-8 bottom-8 bg-sky-500 rounded-full h-12 w-12"></div>

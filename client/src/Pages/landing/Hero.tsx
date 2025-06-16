@@ -164,7 +164,7 @@ const Hero = () => {
                       ? "rgb(255,255,255,0.15)" // purple-400: rgb(192,132,252)
                       : "rgba(255,255,255,0.15)", // white/15: rgba(255,255,255,0.15)
                 }}
-                transition={{ delay: 0.2, ease: easeInOut }}
+                transition={{ delay: 0.3, ease: easeInOut }}
                 className="p-3 sm:col-span-4 flex items-start justify-center rounded-md border border-white/15"
               >
                 <div className="flex justify-start items-start">
