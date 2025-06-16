@@ -92,7 +92,7 @@ const DashboardLanding = () => {
               </div>
               <Card className="bg-primary border-none ">
                 <CardContent className="space-y-4 text-md text-white">
-                  <div className="flex gap-1 justify-between items-center ">
+                  <div className="border p-3 rounded-md flex gap-1 justify-between items-center border-white/15 hover:border-white/35">
                     <div className=" text-xl">
                       <a
                         href="https://youtube.com/shorts/NLFoSt4Iuxc?feature=shared"
@@ -118,8 +118,8 @@ const DashboardLanding = () => {
                       {" "}
                     </Checkbox>
                   </div>
-                  <p className="border border-white/25"></p>
-                  <div className="flex gap-1 justify-between items-center">
+                  {/* <p className="border border-white/25"></p> */}
+                  <div className="p-3 rounded-md flex gap-1 justify-between items-center border border-white/15 hover:border-white/35">
                     <span className="text-xl">
                       <a
                         href="https://youtube.com/shorts/NLFoSt4Iuxc?feature=shared"
