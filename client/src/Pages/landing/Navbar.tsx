@@ -1,11 +1,14 @@
 import NavbarImage from "../../assets/logoLight.png";
-import { GiHamburgerMenu } from "react-icons/gi";
 import { motion } from "motion/react";
 import { useNavigate } from "react-router-dom";
+import MobileSidebar from "./MobileSidebar";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { useState } from "react";
 
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   return (
     <section className="sticky top-0 z-50 px-4 flex justify-center ">
       <div className="mt-5 container max-w-7xl backdrop-blur-xl">
@@ -33,7 +36,11 @@ const Navbar = () => {
 
           <div className="gap-4 mr-1 flex justify-end ">
             {/* Hamburger Icon */}
-            <GiHamburgerMenu className="text-white md:hidden" />
+            <div onClick={() => {
+              setIsSidebarOpen(!isSidebarOpen)
+            }}>
+              <GiHamburgerMenu className="text-white md:hidden" />
+            </div>
             {/* Buttons */}
             <button className="py-2 px-3 hidden md:block font-mono cursor-pointer hover:bg-[#333333]/80 text-white  bg-[#333333] rounded-lg " onClick={() => navigate("/login")}>
               Login
@@ -43,6 +50,7 @@ const Navbar = () => {
             </button>
           </div>
         </motion.div>
+        {<MobileSidebar isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen}/>}
       </div>
     </section>
   );
