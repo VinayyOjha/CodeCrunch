@@ -1,8 +1,10 @@
 import { Input } from "@/components/ui/input";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
   return (
     <section className="min-h-screen bg-black relative">
       <div className="px-6 sm:pt-0 sm:p-4 gap-2 h-screen flex flex-col justify-center items-center max-w-xl mx-auto ">
@@ -68,6 +70,7 @@ const Login = () => {
         {/* Component 4: Sign In button */}
         <div className="px-8 sm:p-0 flex w-full">
           <button
+            onClick={()=>navigate("/dashboard")}
             className="py-2 font-mono font-bold text-md sm:text-lg w-full rounded-md
            text-white bg-purple-500"
           >

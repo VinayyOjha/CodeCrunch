@@ -135,7 +135,7 @@ const Hero = () => {
 
         {/* About the competion*/}
 
-        <div className="mb-20 mt-20">
+        <div id="aboutCC" className="mb-20 mt-20">
           <AnimatedSection>
             <p className="mb-10 text-center text-4xl lg:text-5xl text-white font-bold font-mono">
               About the competition
@@ -173,7 +173,7 @@ const Hero = () => {
                       hoveredIndex === 0 ? "animate-caret-blink" : ""
                     }`}
                   />
-                  <p className="text-neutral-400  ml-2">
+                  <div className="text-neutral-400  ml-2">
                     For the next 45 days, you will receive 2-3 coding problems
                     daily. The questions will cover topics like{" "}
                     <span className="text-purple-300">
@@ -187,7 +187,7 @@ const Hero = () => {
                       </span>{" "}
                       will be included
                     </p>
-                  </p>
+                  </div>
                 </div>
               </motion.div>
 
@@ -222,7 +222,7 @@ const Hero = () => {
                       hoveredIndex === 1 ? "animate-caret-blink" : ""
                     }`}
                   />
-                  <p className="text-neutral-400 ml-2">
+                  <div className="text-neutral-400 ml-2">
                     The <span className="text-red-200">aim</span> of this
                     challenge is to build
                     <span className="text-red-200">
@@ -231,7 +231,7 @@ const Hero = () => {
                     </span>{" "}
                     and promote{" "}
                     <p className="text-red-200">collaborative growth.</p>
-                  </p>
+                  </div>
                 </div>
               </motion.div>
 
@@ -256,7 +256,7 @@ const Hero = () => {
                       ? "rgb(255,255,255,0.15)" // green-200: rgb(187,247,208)
                       : "rgba(255,255,255,0.15)", // white/15: rgba(255,255,255,0.15)
                 }}
-                transition={{ delay: 0.2, ease: easeInOut }}
+                transition={{ delay: 0.3, ease: easeInOut }}
                 className="p-3 sm:col-span-6 items-start justify-center rounded-md border border-white/15"
               >
                 <div className="flex">
@@ -265,17 +265,20 @@ const Hero = () => {
                       hoveredIndex === 2 ? "animate-caret-blink" : ""
                     }`}
                   />
-                  <p className="text-neutral-400 ml-2">
-                    <p>
-                      <span className="font-bold text-white">Marking Scheme</span> Points allocated:{" "}
+                  <div className="text-neutral-400 ml-2">
+                    <div>
+                      <span className="font-bold text-white">
+                        Marking Scheme
+                      </span>{" "}
+                      Points allocated:{" "}
                       <span className="text-green-300">
                         Easy (5), Medium (8), Hard (10){" "}
                       </span>
-                      </p>
-                      Seeking external help incurs a <span className="text-red-300">
-                        penalty of -2 points
-                      </span> . Solve authentically to maximize scores.
-                  </p>
+                    </div>
+                    Seeking external help incurs a{" "}
+                    <span className="text-red-300">penalty of -2 points</span> .
+                    Solve authentically to maximize scores.
+                  </div>
                 </div>
               </motion.div>
             </div>
@@ -284,7 +287,10 @@ const Hero = () => {
 
         {/* Finalists and Top Finsihers */}
         <AnimatedSection>
-          <div className="mt-6 mb-20 w-full flex flex-col justify-center items-center text-white">
+          <div
+            id="prizes"
+            className="mt-6 mb-20 w-full flex flex-col justify-center items-center text-white"
+          >
             <span className="mt-6 mb-12 font-mono font-bold text-center text-4xl lg:text-5xl">
               Prizes & Rewards
             </span>
@@ -308,7 +314,7 @@ const Hero = () => {
 
         {/* Competition rules */}
         <AnimatedSection>
-          <div className="mb-20 mt-10">
+          <div id="rules" className="mb-20 mt-10">
             <p className="mb-10 text-center text-4xl lg:text-5xl text-white font-bold font-mono">
               Competition Rules
             </p>
@@ -317,44 +323,48 @@ const Hero = () => {
               <div className="space-y-6 font-mono">
                 <div className="flex gap-3 items-start text-lg">
                   <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-purple-400" />
-                  <p className="text-neutral-500">
-                    <p className="text-white/90 text-xl">Daily Problems:</p> Solve 2-3
-                    coding problems daily for 45 days.
-                  </p>
+                  <div className="text-neutral-500">
+                    <p className="text-white/90 text-xl">Daily Problems:</p>{" "}
+                    Solve 2-3 coding problems daily for 45 days.
+                  </div>
                 </div>
 
                 <div className="flex gap-3 items-start text-lg">
                   <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-green-400" />
-                  <p className="text-neutral-500">
-                    <p className="text-white/90 text-xl">No AI assistance:</p> Solutions
-                    must be your own, without the use of large language models
-                    (LLMs) or any other AI coding tools.
-                  </p>
+                  <div className="text-neutral-500">
+                    <p className="text-white/90 text-xl">No AI assistance:</p>{" "}
+                    Solutions must be your own, without the use of large
+                    language models (LLMs) or any other AI coding tools.
+                  </div>
                 </div>
 
                 <div className="flex gap-3 items-start text-lg">
                   <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-yellow-400" />
-                  <p className="text-neutral-500">
-                    <p className="text-white/90 text-xl">Honesty is Key:</p> Be honest
-                    with yourself, and put in your best effort. No cheating!
-                  </p>
+                  <div className="text-neutral-500">
+                    <p className="text-white/90 text-xl">Honesty is Key:</p> Be
+                    honest with yourself, and put in your best effort. No
+                    cheating!
+                  </div>
                 </div>
 
                 <div className="flex gap-3 items-start text-lg">
                   <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-red-400" />
-                  <p className="text-neutral-500">
-                    <p className="text-white/90 text-xl">Problem Submission:</p> Submit
-                    your solutions within the given timeframe (likely daily).
-                  </p>
+                  <div className="text-neutral-500">
+                    <p className="text-white/90 text-xl">Problem Submission:</p>{" "}
+                    Submit your solutions within the given timeframe (likely
+                    daily).
+                  </div>
                 </div>
 
                 <div className="flex gap-3 items-start text-lg">
                   <IoCheckmarkDoneOutline className=" shrink-0 h-6 w-6 text-cyan-400" />
-                  <p className="text-neutral-500">
-                    <p className="text-white/90 text-xl">Collaborative Learning:</p>{" "}
+                  <div className="text-neutral-500">
+                    <p className="text-white/90 text-xl">
+                      Collaborative Learning:
+                    </p>{" "}
                     Feel free to discuss problems with fellow participants, but
                     ensure your submissions are your own work.
-                  </p>
+                  </div>
                 </div>
               </div>
             </div>
