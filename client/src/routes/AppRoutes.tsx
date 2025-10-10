@@ -5,15 +5,14 @@ import Register from "@/Pages/authentication/Register"
 import DashboardLanding from "@/Pages/dashboarduser/dashboard/DashboardLanding"
 
 
-const AppRoutes = () => {
-  return (
-    <Routes>
-        <Route path = "/" element = {<Landing />} />
-        <Route path = "/login" element = {<Login />} />
-        <Route path = "/register" element = {<Register />} />
-        <Route path = "/dashboard" element = {<DashboardLanding />} />
-    </Routes>
-  )
-}
-
-export default AppRoutes
+  const AppRoutes = () => {
+    return (
+      <Routes>
+          <Route path = "/" element = {<Landing />} />
+          <Route path = "/login" element = {<Login />} />
+          <Route path = "/register" element = {<Register />} />
+          <Route path = "/dashboard" element = {<DashboardLanding />} />
+      </Routes>
+    )
+  }
+  export default AppRoutes
