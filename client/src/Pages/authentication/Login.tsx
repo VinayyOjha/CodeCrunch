@@ -1,10 +1,42 @@
 import { Input } from "@/components/ui/input";
+import { useState } from "react";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  // Login function
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError("");
+
+    try {
+      const response = await fetch('http:localhost:3500/auth', {
+        method: "POST",
+        headers: { 'Content-Type': "application/json"},
+        body: JSON.stringify({ email, password })
+      });
+
+      const data = await response.json();
+
+      if (response.ok){
+        // Handle successful login (save token, redirect, etc.)
+        // localStorage.setItem("token", data.token); // If using JWT
+        navigate("/dashboard");
+      }
+      else {
+        setError(data.message || "Invalid Login Credentials");
+      }
+    } catch (error) {
+      setError("Network Error. Please try again.")
+    }
+  };
+
   return (
     <section className="min-h-screen bg-black relative">
       <div className="px-6 sm:pt-0 sm:p-4 gap-2 h-screen flex flex-col justify-center items-center max-w-xl mx-auto ">
@@ -25,14 +57,17 @@ const Login = () => {
             <div className="flex gap-2 items-center">
               <MdOutlineMailOutline className="text-sky-600 h-6 w-auto" />
               <span className="font-mono text-lg sm:text-xl text-white">
-                Email
+                College Email ID
               </span>
             </div>
 
             <Input
               type="email"
-              placeholder="Enter Email"
+              placeholder="2024pgcsca011@nitjsr.ac.in"
               className="mt-2 font-mono text-sm" 
+              value={ email }
+              onChange={ e => setEmail(e.target.value) }
+              required
             />
           </div>
 
@@ -54,6 +89,9 @@ const Login = () => {
               type="password"
               placeholder="Enter Password"
               className=" mt-2 font-mono text-sm"
+              value={ password }
+              onChange={ e => setPassword(e.target.value) }
+              required
             />
           </div>
         </div>
