@@ -3,6 +3,7 @@ export interface UserRegistrationDetail {
     name: string;
     password: string;
     TIC: string;
+    otp?: string;
 }
 
 export interface UserDetail extends UserRegistrationDetail{
