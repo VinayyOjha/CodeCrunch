@@ -4,12 +4,13 @@ import cookieParser from "cookie-parser";
 import { config } from "dotenv";
 import { isCredentialsAllowed, origins } from './config/app.config';
 import { connectDB } from './config/db.config';
+import Register from './routes/routes.register'
 
+config();
 const app = express();
 const PORT = process.env.PORT || 3500;
 connectDB();
 
-config();
 app.use(
     cors({
         origin: (origin, callback) => {
@@ -28,10 +29,10 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Register
-app.use("/api/register", );
+app.use("/api/register", Register);
 
 // Login
-app.use("/api/auth",)
+// app.use("/api/auth",)
 
 
 app.listen(PORT, () => { console.log(`Server running on ${PORT}`)});
