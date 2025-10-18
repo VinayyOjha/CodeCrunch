@@ -12,9 +12,21 @@ import {
 } from "@/components/ui/select";
 import { useNavigate } from "react-router-dom";
 import { Label } from "@/components/ui/label";
+import { useState } from "react";
 
 const Register = () => {
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+
   const navigate = useNavigate();
+  function validateEmail(val: string) {
+    const regex = /^[a-zA-Z0-9._%+-]+@nitjsr\.ac\.in$/i;
+    if (!regex.test(val)){
+      setError("Enter a valid college email(Eg- 2024pgcsca011@nitjsr.ac.in)")
+    }
+    else setError("");
+  }
+
   return (
     <div className=" min-h-screen bg-black">
       <div className="max-w-xl mx-auto  ">
@@ -55,7 +67,7 @@ const Register = () => {
               <div className="flex gap-2 items-center">
                 <MdOutlineMailOutline className="text-gray-300 h-6 w-auto" />
                 <span className="font-mono text-md text-white ">
-                  Enter Colg MailId
+                  Enter College Email Id
                 </span>
               </div>
               
@@ -65,7 +77,17 @@ const Register = () => {
                 type="email"
                 placeholder="Eg:2024pgcsca011@nitjsr.ac.in"
                 className=" mt-2 font-mono text-sm sm:text-md"
+                value={email}
+                onChange={(e) => {
+                  const val = e.target.value;
+                  setEmail(val);
+                  validateEmail(val);
+                }}
               />
+
+              { error && 
+                <p className="text-red-400 text-xs mt-1 font-mono">{error}</p>
+              }
             </div>
 
             {/* Password */}
@@ -168,7 +190,7 @@ const Register = () => {
                     value="devops"
                     className="font-mono text-white hover:bg-white/10"
                   >
-                    Vinay Ojhahahaa
+                    Vinay Ojha
                   </SelectItem>
                 </SelectContent>
               </Select>

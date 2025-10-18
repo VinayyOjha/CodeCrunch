@@ -5,9 +5,9 @@ import { sendOTPHandler } from '../controllers/controller.sendOTP';
 const router = Router();
 
 // Register new User
-router.post('/register', UserRegistrationController);
+router.post('/', UserRegistrationController);
 
 // Send OTP
-router.route('sendOTP').get(sendOTPHandler);
+router.route('/sendOTP').get(sendOTPHandler);
 
 export default router;
