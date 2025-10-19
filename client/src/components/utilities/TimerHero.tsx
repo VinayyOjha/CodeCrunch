@@ -103,7 +103,7 @@ const TimerHero: React.FC<TimerHeroProps> = ({ targetDate, onComplete }) => {
       </div>
       
       {!isActive && (
-      <div className="timer-complete">
+      <div className="timer-complete font-mono">
         Time's up!
       </div>
       )}

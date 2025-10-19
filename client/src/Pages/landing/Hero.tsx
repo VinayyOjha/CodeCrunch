@@ -12,7 +12,7 @@ import TimerHero from "@/components/utilities/TimerHero";
 
 const Hero = () => {
   const navigate = useNavigate();
-  const targetDate = new Date("2025-07-16T00:00:00");
+  const targetDate = new Date("2025-11-16T00:00:00");
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   return (
     <section className="p-3 mt-2">
