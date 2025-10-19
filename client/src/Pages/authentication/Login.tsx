@@ -8,34 +8,34 @@ const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  // const [error, setError] = useState("");
 
   // Login function
-  const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError("");
+  // const handleLogin = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setError("");
 
-    try {
-      const response = await fetch('http:localhost:3500/auth', {
-        method: "POST",
-        headers: { 'Content-Type': "application/json"},
-        body: JSON.stringify({ email, password })
-      });
+  //   try {
+  //     const response = await fetch('http:localhost:3500/auth', {
+  //       method: "POST",
+  //       headers: { 'Content-Type': "application/json"},
+  //       body: JSON.stringify({ email, password })
+  //     });
 
-      const data = await response.json();
+  //     const data = await response.json();
 
-      if (response.ok){
-        // Handle successful login (save token, redirect, etc.)
-        // localStorage.setItem("token", data.token); // If using JWT
-        navigate("/dashboard");
-      }
-      else {
-        setError(data.message || "Invalid Login Credentials");
-      }
-    } catch (error) {
-      setError("Network Error. Please try again.")
-    }
-  };
+  //     if (response.ok){
+  //       // Handle successful login (save token, redirect, etc.)
+  //       // localStorage.setItem("token", data.token); // If using JWT
+  //       navigate("/dashboard");
+  //     }
+  //     else {
+  //       setError(data.message || "Invalid Login Credentials");
+  //     }
+  //   } catch (error) {
+  //     setError("Network Error. Please try again.")
+  //   }
+  // };
 
   return (
     <section className="min-h-screen bg-black relative">
