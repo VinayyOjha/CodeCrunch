@@ -72,8 +72,8 @@ const DashboardLanding = () => {
             {/* Problems of the day */}
             <motion.div
               className="p-1  fex-1 lg:flex-6 font-mono rounded-md bg-primary boder border-white/15"
-              initial={{ scale: 1, opacity: 0.9 }}
-              whileHover={{ scale: 1.01, opacity: 1 }}
+              initial={{ opacity: 0.9 }}
+              whileHover={{ opacity: 1 }}
               transition={{ ease: "easeInOut", delay: 0.3 }}
             >
               <div className="mx-4 mt-2">
@@ -151,8 +151,8 @@ const DashboardLanding = () => {
             {/* Stats */}
             <motion.div
               className="px-3 py-3 h-full felx-1 lg:flex-4 rounded-md bg-primary border-white/15"
-              initial={{ scale: 1, opacity: 0.9 }}
-              whileHover={{ scale: 1.01, opacity: 1 }}
+              initial={{ opacity: 0.9 }}
+              whileHover={{ opacity: 1 }}
               transition={{ ease: "easeInOut", delay: 0.3 }}
             >
               <div className="flex flex-col h-full">
@@ -220,8 +220,8 @@ const DashboardLanding = () => {
           {/* bottom container - previous problems  */}
           <motion.div
             className="p-1 flex-1 lg:flex-6  rounded-md bg-[#171717] brder border-white/15"
-            initial={{ scale: 1, opacity: 0.9 }}
-            whileHover={{ scale: 1.01, opacity: 1 }}
+            initial={{ opacity: 0.9 }}
+            whileHover={{ opacity: 1 }}
             transition={{ ease: "easeInOut", delay: 0.3 }}
           >
             <div className="mx-6 mt-2 font-mono sm:flex justify-between">
@@ -443,8 +443,8 @@ const DashboardLanding = () => {
         {/* right outer container */}
         <motion.div
           className="max-h-160 gap-1 flex-col hidden md:flex flex-2 rounded-md bg-primary border-white/15 shadow transition-shadow duration-300 hover:shadow-lg hover:shadow-amber-200 "
-          initial={{ scale: 1, opacity: 0.9 }}
-          whileHover={{ scale: 1.01, opacity: 1 }}
+          initial={{ opacity: 0.9 }}
+          whileHover={{ opacity: 1 }}
           transition={{ ease: "easeInOut", delay: 0.3 }}
         >
           {/* Heading */}

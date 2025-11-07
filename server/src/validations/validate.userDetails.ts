@@ -27,15 +27,37 @@ export const validateUserRegistrationData = ({
       nameSchema.safeParse(name).success &&
       emailSchema.safeParse(email).success &&
       passwordSchema.safeParse(password).success,
-
-    message:
+      
+      message:
       nameSchema.safeParse(name).error?.issues[0].message ||
       emailSchema.safeParse(email).error?.issues[0].message ||
-      passwordSchema.safeParse(password).error?.issues[0].message,
+      passwordSchema.safeParse(password).error?.issues[0].message
+    };
+    
+    if (!result.status) {
+      return { status: false, msg: result.message };
+    }
+    return { status: true, msg: "" };
   };
+  
+  export const validateUserAuthData = ({
+    email,
+    password
+  }:{
+    email: string,
+    password: string
+  }) => {
+    let result = {
+      status:
+      emailSchema.safeParse(email).success &&
+      passwordSchema.safeParse(password).success,
 
-  if (!result.status) {
-    return { status: false, msg: result.message };
-  }
-  return { status: true, msg: "" };
-};
+      message:
+      emailSchema.safeParse(email).error?.issues[0].message || 
+      passwordSchema.safeParse(password).error?.issues[0].message
+    };
+
+    if (!result.status) return { status: false, msg: "result.message" }
+
+    return { status: true, msg: "" }
+}

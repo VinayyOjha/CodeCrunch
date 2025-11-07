@@ -1,32 +1,32 @@
-import { Schema, model } from 'mongoose';
+import mongoose, { Schema } from "mongoose";
+import { UserDetail } from "../interface/interface.user";  
+import { toJSONPlugin } from "../utils/utils.toJSONPlugin";      
 
-const userSchema = new Schema({
-    name: {
-        type: String,
-        required: true,
-        unique: true
-    },
+const userSchema = new Schema<UserDetail>(
+  {
     email: {
-        type: String,
-        required: true,
-        unique: true
+      type: String,
+      required: true,
+      unique: true,
+      match: [/^[\w.-]+@nitjsr\.ac\.in$/, "Invalid institute email address"], 
     },
-    password: {
-        type: String,
-        required: true
-    },
-    role: {
-        type: String,
-        enum: ['Admin', 'TIC', 'Student'],
-        default: 'Student'
-    },
-    groupId: {
-        type: Schema.Types.ObjectId, ref: 'Group'
-    },
-    totalPoints: {
-        type: Number,
-        default: 0,
-    }
-}, { timestamps: true });
+    name: { type: String, required: true },
+    password: { type: String, required: true },
+    TIC: { type: String, required: true },
+    otp: { type: String },
 
-export const User = model('User', userSchema);
+    
+    rank: { type: Number, default: 0 },
+    streak: { type: Number, default: 0 },
+    totalScore: { type: Number, default: 0 },
+    problemSolved: { type: Number, default: 0 },
+  },
+  {
+    timestamps: true,
+  }
+);
+
+userSchema.plugin(toJSONPlugin);
+
+const User = mongoose.model<UserDetail>("User", userSchema);
+export default User;
