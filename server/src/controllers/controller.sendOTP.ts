@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { code } from "../config/status-code";
-import { User } from "../models/model.user";
+import User from "../models/User";
 import { RedisService } from "../services/Redis";
 import { sendEmail } from "../utils/utils.mail";
 

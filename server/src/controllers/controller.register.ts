@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
+import User from "../models/User";
 import { code } from "../config/status-code";
 import { UserRegistrationDetail } from '../interface/interface.user';
 import { validateUserRegistrationData } from '../validations/validate.userDetails';
-import { User } from '../models/model.user';
 
 export const UserRegistrationController = async (req: Request, res: Response) => {
     try {

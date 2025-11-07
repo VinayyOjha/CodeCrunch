@@ -1,14 +1,17 @@
+import { ObjectId } from "mongoose";
+
 export interface UserRegistrationDetail {
     email: string;
     name: string;
     password: string;
-    TIC: string;
+    role: "student" | "tic" | "admin";
+    groupId?: ObjectId;
     otp?: string;
 }
 
 export interface UserDetail extends UserRegistrationDetail{
-    rank: Number;
-    streak: Number;
-    totalScore: Number;
-    problemSolved: Number;
+    rank: number;
+    streak: number;
+    totalScore: number;
+    problemSolved: number;
 }

@@ -1,5 +1,7 @@
+import mongoose from "mongoose";
+
 export interface GroupDetail{
-    name: String, // Name of the tic
-    ticId: String,
-    members: String[] // userIds
+    name: string, // Name of the tic
+    ticId: mongoose.Schema.Types.ObjectId,
+    members: mongoose.Schema.Types.ObjectId[] // userIds
 }
