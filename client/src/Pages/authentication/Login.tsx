@@ -1,4 +1,5 @@
 import { Input } from "@/components/ui/input";
+import CodeCrunch from "@/components/utilities/CodeCrunch";
 import { useState } from "react";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
@@ -42,9 +43,7 @@ const Login = () => {
       <div className="px-6 sm:pt-0 sm:p-4 gap-2 h-screen flex flex-col justify-center items-center max-w-xl mx-auto ">
         {/* Component 1: Prompt to Client */}
         <div className="mb-2 sm:mb-5 text-center text-white">
-          <p className="font-mono font-bold text-3xl bg-gradient-to-r from-purple-500 via-orange-500 to-pink-500 bg-clip-text text-transparent inline-block">
-            CodeCrunch.
-          </p>
+          <CodeCrunch className=""/>
           <p className="mt-2 font-mono text-md sm:text-2xl text-white">
             Please sign in to your account.
           </p>
