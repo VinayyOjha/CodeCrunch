@@ -33,7 +33,8 @@ const Login = () => {
       else {
         setError(data.message || "Invalid Login Credentials");
       }
-    } catch (error) {
+    } catch {
+      console.error(error);
       setError("Network Error. Please try again.")
     }
   };

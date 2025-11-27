@@ -1,6 +1,5 @@
 import CodeCrunch from '@/components/utilities/CodeCrunch'
 import { InputOTPComponent } from '@/components/utilities/OTPComponent'
-import React from 'react'
 
 const VerifyOTP = () => {
   return (
